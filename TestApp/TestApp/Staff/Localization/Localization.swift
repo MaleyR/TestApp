@@ -8,5 +8,10 @@
 
 import Foundation
 
+// Provides an access to localized strings by constants
 struct Localization {
+    struct Tabs {
+        static let list = "list"
+        static let service = "service"
+    }
 }

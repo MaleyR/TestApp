@@ -8,6 +8,7 @@
 
 import Foundation
 
+// This extension was added to decrease the code size
 extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")

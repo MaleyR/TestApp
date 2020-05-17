@@ -17,6 +17,10 @@
 		AC1AE6B92471C78100811388 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC1AE6B62471C78100811388 /* Localizable.strings */; };
 		AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6BC2471C7A500811388 /* Localization.swift */; };
 		AC1AE6C32471C86500811388 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6C22471C86500811388 /* String+Localization.swift */; };
+		AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6C72471C9EC00811388 /* AppCoordinator.swift */; };
+		AC1AE6CC2471CA3300811388 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6CB2471CA3300811388 /* Coordinator.swift */; };
+		AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6D52471D2B500811388 /* ListCoordinator.swift */; };
+		AC1AE6D82471D2C100811388 /* ServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6D72471D2C100811388 /* ServiceCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		AC1AE6B72471C78100811388 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		AC1AE6BC2471C7A500811388 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		AC1AE6C22471C86500811388 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		AC1AE6C72471C9EC00811388 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AC1AE6CB2471CA3300811388 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		AC1AE6D52471D2B500811388 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		AC1AE6D72471D2C100811388 /* ServiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		AC1AE6872471C00100811388 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE6C42471C9D100811388 /* Modules */,
 				AC1AE6BE2471C84E00811388 /* Extensions */,
 				AC1AE6BA2471C79D00811388 /* Staff */,
 				AC1AE6AE2471C74A00811388 /* Resources */,
@@ -143,6 +152,113 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		AC1AE6C42471C9D100811388 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6C92471CA1900811388 /* Common */,
+				AC1AE6C52471C9D100811388 /* App */,
+				AC1AE6CD2471D2A400811388 /* List */,
+				AC1AE6D12471D2A400811388 /* Service */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AC1AE6C52471C9D100811388 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6C62471C9E400811388 /* Coordinator */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AC1AE6C62471C9E400811388 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6C72471C9EC00811388 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		AC1AE6C92471CA1900811388 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6CA2471CA2B00811388 /* Coordinator */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AC1AE6CA2471CA2B00811388 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6CB2471CA3300811388 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		AC1AE6CD2471D2A400811388 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6CF2471D2A400811388 /* Coordinator */,
+				AC1AE6CE2471D2A400811388 /* ViewModel */,
+				AC1AE6D02471D2A400811388 /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		AC1AE6CE2471D2A400811388 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC1AE6CF2471D2A400811388 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6D52471D2B500811388 /* ListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		AC1AE6D02471D2A400811388 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC1AE6D12471D2A400811388 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6D32471D2A400811388 /* Coordinator */,
+				AC1AE6D22471D2A400811388 /* ViewModel */,
+				AC1AE6D42471D2A400811388 /* View */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AC1AE6D22471D2A400811388 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC1AE6D32471D2A400811388 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6D72471D2C100811388 /* ServiceCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		AC1AE6D42471D2A400811388 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,11 +333,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */,
+				AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */,
 				AC1AE68D2471C00100811388 /* ViewController.swift in Sources */,
 				AC1AE6892471C00100811388 /* AppDelegate.swift in Sources */,
 				AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */,
 				AC1AE6C32471C86500811388 /* String+Localization.swift in Sources */,
 				AC1AE68B2471C00100811388 /* SceneDelegate.swift in Sources */,
+				AC1AE6CC2471CA3300811388 /* Coordinator.swift in Sources */,
+				AC1AE6D82471D2C100811388 /* ServiceCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
