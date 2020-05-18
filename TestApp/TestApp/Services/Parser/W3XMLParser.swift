@@ -8,13 +8,27 @@
 
 import Foundation
 
+fileprivate enum W3XMLKey: String {
+    case title = "TITLE"
+    case artist = "ARTIST"
+    case country = "COUNTRY"
+    case company = "COMPANY"
+    case price = "PRICE"
+    case year = "YEAR"
+    case cd = "CD"
+    case catalog = "CATALOG"
+}
+
 class W3XMLParser: NSObject, Parser {
     private var xmlParser: XMLParser!
-    private let descriptor = W3XMLParserDescriptor()
     
-    private var completion: (([String : Any]) -> Void)?
+    private var cds: [CD] = []
+    private var currentKey: W3XMLKey?
+    private var currentItem: CD?
     
-    func parse(data: Data, with completion: @escaping (([String : Any]) -> Void)) {
+    private var completion: (([CD]) -> Void)?
+    
+    func parse(data: Data, with completion: @escaping (([CD]) -> Void)) {
         self.completion = completion
         xmlParser = XMLParser(data: data)
         xmlParser.delegate = self
@@ -28,18 +42,37 @@ extension W3XMLParser: XMLParserDelegate {
                 namespaceURI: String?,
                 qualifiedName qName: String?,
                 attributes attributeDict: [String : String] = [:]) {
-        descriptor.startNode(name: elementName)
+        self.currentKey = W3XMLKey(rawValue: elementName)
+        
+        if let key = self.currentKey, key == .cd {
+            currentItem = CD()
+        }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        descriptor.setValue(value: string)
+        guard let key = self.currentKey else { return }
+        
+        let string = string.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        switch key {
+        case .artist: currentItem?.artist.append(string)
+        case .company: currentItem?.company.append(string)
+        case .country: currentItem?.country.append(string)
+        case .price: currentItem?.price.append(string)
+        case .title: currentItem?.title.append(string)
+        case .year: currentItem?.year.append(string)
+        default: break
+        }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        descriptor.closeNode(name: elementName)
+        guard let item = self.currentItem,
+            let key = W3XMLKey(rawValue: elementName),
+            key == .cd else { return }
+        cds.append(item)
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        completion?(descriptor.toDictionary())
+        completion?(cds)
     }
 }

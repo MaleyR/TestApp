@@ -17,16 +17,14 @@ class ServiceView: UIViewController {
     
     var cellViewModels: [ServiceCellViewModel] = []
     
-    var viewModel: ServiceViewModel? {
-        didSet {
-            setupViewModel()
-        }
-    }
+    var viewModel: ServiceViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+        
+        viewModel?.reloadData()
     }
 }
 
@@ -34,6 +32,7 @@ class ServiceView: UIViewController {
 private extension ServiceView {
     func setup() {
         setupTableView()
+        setupViewModel()
     }
     
     func setupTableView() {
@@ -46,8 +45,9 @@ private extension ServiceView {
             UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
         })
         
-        viewModel?.cellViewModels.bind({ [unowned self] (cellViewModels) in
+        viewModel?.cellViewModels.bindAndFire({ [unowned self] (cellViewModels) in
             self.cellViewModels = cellViewModels
+            self.tableView.reloadData()
         })
     }
 }

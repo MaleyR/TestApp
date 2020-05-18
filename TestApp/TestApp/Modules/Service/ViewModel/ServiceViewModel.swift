@@ -12,4 +12,6 @@ protocol ServiceViewModel {
     var isLoading: Dynamic<Bool> { get }
     
     var cellViewModels: Dynamic<[ServiceCellViewModel]> { get }
+    
+    func reloadData()
 }

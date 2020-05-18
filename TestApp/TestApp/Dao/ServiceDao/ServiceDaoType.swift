@@ -1,5 +1,5 @@
 //
-//  Catalog.swift
+//  ServiceDaoType.swift
 //  TestApp
 //
 //  Created by Ruslan Maley on 18.05.2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Catalog: Decodable {
-    var cds: [CD]
+protocol ServiceDaoType {
+    func loadObjects(completion: @escaping (([CD], Error?) -> Void))
 }

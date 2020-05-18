@@ -12,4 +12,12 @@ class ServicesFactory: Services {
     lazy var databaseDao: DatabaseDaoType = {
         return CoreDataDao()
     }()
+    
+    lazy var networkDao: NetworkInterface = {
+        return NetworkDao()
+    }()
+    
+    lazy var xmlParser: Parser = {
+        return W3XMLParser()
+    }()
 }

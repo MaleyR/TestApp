@@ -12,7 +12,30 @@ class ServiceViewModelObject: ServiceViewModel {
     var isLoading: Dynamic<Bool> = .init(false)
     var cellViewModels: Dynamic<[ServiceCellViewModel]>
     
-    init() {
+    private let dao: ServiceDaoType
+    
+    init(dao: ServiceDaoType) {
         self.cellViewModels = .init([])
+        
+        self.dao = dao
+    }
+    
+    func reloadData() {
+        loadData()
+    }
+}
+
+// MARK: - Private methods implementation
+private extension ServiceViewModelObject {
+    func loadData() {
+        dao.loadObjects { [unowned self] (objects, error) in
+            DispatchQueue.main.async {
+                self.cellViewModels.value = self.viewModels(from: objects)
+            }
+        }
+    }
+    
+    func viewModels(from objects: [CD]) -> [ServiceCellViewModel] {
+        return objects.map({ ServiceCellViewModelObject(cd: $0) })
     }
 }

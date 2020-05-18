@@ -16,6 +16,8 @@ class ServiceCoordinator: TabCoordinator {
         }
     }
     
+    private let dao: ServiceDaoType
+    
     var rootViewController: UIViewController {
         let viewController = navigationController
         viewController.tabBarItem = UITabBarItem(title: Localization.Tabs.service.localized,
@@ -35,6 +37,16 @@ class ServiceCoordinator: TabCoordinator {
     private lazy var viewController: UIViewController = {
         let viewController = self.storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.viewIdentifier)
         viewController.title = Localization.Tabs.service.localized
+        
+        if let requiredViewController = viewController as? ServiceView {
+            let viewModel = ServiceViewModelObject(dao: dao)
+            requiredViewController.viewModel = viewModel
+        }
+        
         return viewController
     }()
+    
+    init(dao: ServiceDaoType) {
+        self.dao = dao
+    }
 }

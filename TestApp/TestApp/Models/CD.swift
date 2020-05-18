@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct CD: Decodable {
-    var title: String
-    var artist: String
-    var country: String
-    var company: String
-    var price: String
-    var year: String
+struct CD {
+    var title: String = ""
+    var artist: String = ""
+    var country: String = ""
+    var company: String = ""
+    var price: String = ""
+    var year: String = ""
 }

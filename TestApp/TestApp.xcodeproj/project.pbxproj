@@ -39,10 +39,7 @@
 		AC1AE7272472413F00811388 /* SaveDataDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7262472413F00811388 /* SaveDataDecorator.swift */; };
 		AC1AE729247247E800811388 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1AE728247247E800811388 /* ListTableViewCell.xib */; };
 		AC1AE72D2472547A00811388 /* W3XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE72C2472547A00811388 /* W3XMLParser.swift */; };
-		AC1AE72F2472561E00811388 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE72E2472561E00811388 /* Catalog.swift */; };
 		AC1AE7312472562500811388 /* CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7302472562500811388 /* CD.swift */; };
-		AC1AE73424725A1900811388 /* W3XMLParserNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE73324725A1900811388 /* W3XMLParserNode.swift */; };
-		AC1AE73624725AF100811388 /* W3XMLParserDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE73524725AF100811388 /* W3XMLParserDescriptor.swift */; };
 		AC1AE73A2472693000811388 /* NetworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7392472693000811388 /* NetworkDao.swift */; };
 		AC1AE73D24726D8B00811388 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE73C24726D8B00811388 /* NetworkInterface.swift */; };
 		AC1AE74024726F6200811388 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE73F24726F6200811388 /* NetworkRequest.swift */; };
@@ -56,6 +53,8 @@
 		AC1AE7582472770900811388 /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1AE7562472770900811388 /* ServiceTableViewCell.xib */; };
 		AC1AE75A2472771800811388 /* ServiceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7592472771800811388 /* ServiceCellViewModel.swift */; };
 		AC1AE75C2472772600811388 /* ServiceCellViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE75B2472772600811388 /* ServiceCellViewModelObject.swift */; };
+		AC1AE7602472866500811388 /* ServiceDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE75F2472866500811388 /* ServiceDao.swift */; };
+		AC1AE7622472867F00811388 /* ServiceDaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7612472867F00811388 /* ServiceDaoType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,10 +92,7 @@
 		AC1AE7262472413F00811388 /* SaveDataDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataDecorator.swift; sourceTree = "<group>"; };
 		AC1AE728247247E800811388 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		AC1AE72C2472547A00811388 /* W3XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W3XMLParser.swift; sourceTree = "<group>"; };
-		AC1AE72E2472561E00811388 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		AC1AE7302472562500811388 /* CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CD.swift; sourceTree = "<group>"; };
-		AC1AE73324725A1900811388 /* W3XMLParserNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W3XMLParserNode.swift; sourceTree = "<group>"; };
-		AC1AE73524725AF100811388 /* W3XMLParserDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W3XMLParserDescriptor.swift; sourceTree = "<group>"; };
 		AC1AE7392472693000811388 /* NetworkDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDao.swift; sourceTree = "<group>"; };
 		AC1AE73C24726D8B00811388 /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		AC1AE73F24726F6200811388 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -110,6 +106,8 @@
 		AC1AE7562472770900811388 /* ServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceTableViewCell.xib; sourceTree = "<group>"; };
 		AC1AE7592472771800811388 /* ServiceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellViewModel.swift; sourceTree = "<group>"; };
 		AC1AE75B2472772600811388 /* ServiceCellViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellViewModelObject.swift; sourceTree = "<group>"; };
+		AC1AE75F2472866500811388 /* ServiceDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDao.swift; sourceTree = "<group>"; };
+		AC1AE7612472867F00811388 /* ServiceDaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDaoType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +140,7 @@
 		AC1AE6872471C00100811388 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE75D2472865600811388 /* Dao */,
 				AC1AE6F224720F3A00811388 /* Core */,
 				AC1AE6DE2471F80F00811388 /* Models */,
 				AC1AE6C42471C9D100811388 /* Modules */,
@@ -357,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				AC1AE6DF2471F81D00811388 /* Record.swift */,
-				AC1AE72E2472561E00811388 /* Catalog.swift */,
 				AC1AE7302472562500811388 /* CD.swift */,
 			);
 			path = Models;
@@ -496,20 +494,10 @@
 		AC1AE72B2472546000811388 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				AC1AE73224725A0200811388 /* Elements */,
 				AC1AE72C2472547A00811388 /* W3XMLParser.swift */,
 				AC1AE7432472716E00811388 /* Parser.swift */,
 			);
 			path = Parser;
-			sourceTree = "<group>";
-		};
-		AC1AE73224725A0200811388 /* Elements */ = {
-			isa = PBXGroup;
-			children = (
-				AC1AE73324725A1900811388 /* W3XMLParserNode.swift */,
-				AC1AE73524725AF100811388 /* W3XMLParserDescriptor.swift */,
-			);
-			path = Elements;
 			sourceTree = "<group>";
 		};
 		AC1AE73B24726D7F00811388 /* NetworkInterface */ = {
@@ -570,6 +558,23 @@
 				AC1AE7562472770900811388 /* ServiceTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		AC1AE75D2472865600811388 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE75E2472865600811388 /* ServiceDao */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		AC1AE75E2472865600811388 /* ServiceDao */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE75F2472866500811388 /* ServiceDao.swift */,
+				AC1AE7612472867F00811388 /* ServiceDaoType.swift */,
+			);
+			path = ServiceDao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,7 +661,6 @@
 				AC1AE6E72471F86600811388 /* CoreDataDao.swift in Sources */,
 				AC1AE71824723BEB00811388 /* Services.swift in Sources */,
 				AC1AE713247226DA00811388 /* AddRecordViewModel.swift in Sources */,
-				AC1AE72F2472561E00811388 /* Catalog.swift in Sources */,
 				AC1AE6E02471F81D00811388 /* Record.swift in Sources */,
 				AC1AE73D24726D8B00811388 /* NetworkInterface.swift in Sources */,
 				AC1AE71A24723C0700811388 /* ServicesFactory.swift in Sources */,
@@ -669,19 +673,18 @@
 				AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */,
 				AC1AE715247226E600811388 /* AddRecordViewModelObject.swift in Sources */,
 				AC1AE6E42471F84000811388 /* DatabaseInterface.swift in Sources */,
-				AC1AE73624725AF100811388 /* W3XMLParserDescriptor.swift in Sources */,
 				AC1AE75A2472771800811388 /* ServiceCellViewModel.swift in Sources */,
 				AC1AE6892471C00100811388 /* AppDelegate.swift in Sources */,
 				AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */,
 				AC1AE7272472413F00811388 /* SaveDataDecorator.swift in Sources */,
 				AC1AE6C32471C86500811388 /* String+Localization.swift in Sources */,
 				AC1AE7572472770900811388 /* ServiceTableViewCell.swift in Sources */,
-				AC1AE73424725A1900811388 /* W3XMLParserNode.swift in Sources */,
 				AC1AE70A24721F4300811388 /* ListCellViewModelObject.swift in Sources */,
 				AC1AE70424721BC600811388 /* ListCellViewModel.swift in Sources */,
 				AC1AE74D2472745600811388 /* ServiceViewModelObject.swift in Sources */,
 				AC1AE7312472562500811388 /* CD.swift in Sources */,
 				AC1AE6ED247207C800811388 /* ListView.swift in Sources */,
+				AC1AE7622472867F00811388 /* ServiceDaoType.swift in Sources */,
 				AC1AE711247226A700811388 /* SaveRecordView.swift in Sources */,
 				AC1AE6EF247207D100811388 /* ListViewModel.swift in Sources */,
 				AC1AE7492472744000811388 /* ServiceView.swift in Sources */,
@@ -690,6 +693,7 @@
 				AC1AE7442472716E00811388 /* Parser.swift in Sources */,
 				AC1AE74B2472744A00811388 /* ServiceViewModel.swift in Sources */,
 				AC1AE6D82471D2C100811388 /* ServiceCoordinator.swift in Sources */,
+				AC1AE7602472866500811388 /* ServiceDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Parser {
-    func parse(data: Data, with completion: @escaping (([String : Any]) -> Void))
+    func parse(data: Data, with completion: @escaping (([CD]) -> Void))
 }
