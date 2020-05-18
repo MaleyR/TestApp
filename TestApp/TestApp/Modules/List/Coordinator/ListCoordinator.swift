@@ -35,6 +35,11 @@ class ListCoordinator: TabCoordinator {
     private lazy var viewController: UIViewController = {
         let view = self.storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.viewIdentifier)
         view.title = Localization.Tabs.list.localized
+        
+        if let requiredView = view as? ListView {
+            requiredView.viewModel = ListViewModelObject()
+        }
+        
         return view
     }()
 }

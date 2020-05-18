@@ -25,6 +25,11 @@
 		AC1AE6ED247207C800811388 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6EC247207C800811388 /* ListView.swift */; };
 		AC1AE6EF247207D100811388 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6EE247207D100811388 /* ListViewModel.swift */; };
 		AC1AE6F1247207E500811388 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1AE6F0247207E500811388 /* List.storyboard */; };
+		AC1AE6F424720F4900811388 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6F324720F4900811388 /* Dynamic.swift */; };
+		AC1AE6F62472102000811388 /* ListViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6F52472102000811388 /* ListViewModelObject.swift */; };
+		AC1AE70424721BC600811388 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE70324721BC600811388 /* ListCellViewModel.swift */; };
+		AC1AE70824721DC300811388 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE70724721DC200811388 /* ListTableViewCell.swift */; };
+		AC1AE70A24721F4300811388 /* ListCellViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE70924721F4300811388 /* ListCellViewModelObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		AC1AE6EC247207C800811388 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		AC1AE6EE247207D100811388 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		AC1AE6F0247207E500811388 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		AC1AE6F324720F4900811388 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		AC1AE6F52472102000811388 /* ListViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelObject.swift; sourceTree = "<group>"; };
+		AC1AE70324721BC600811388 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
+		AC1AE70724721DC200811388 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		AC1AE70924721F4300811388 /* ListCellViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModelObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,7 @@
 		AC1AE6872471C00100811388 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE6F224720F3A00811388 /* Core */,
 				AC1AE6DE2471F80F00811388 /* Models */,
 				AC1AE6C42471C9D100811388 /* Modules */,
 				AC1AE6BE2471C84E00811388 /* Extensions */,
@@ -218,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				AC1AE6EE247207D100811388 /* ListViewModel.swift */,
+				AC1AE6F52472102000811388 /* ListViewModelObject.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -233,6 +245,8 @@
 		AC1AE6D02471D2A400811388 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE70524721DB000811388 /* Subviews */,
+				AC1AE70224721BBB00811388 /* ViewModels */,
 				AC1AE6EC247207C800811388 /* ListView.swift */,
 			);
 			path = View;
@@ -319,6 +333,39 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		AC1AE6F224720F3A00811388 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6F324720F4900811388 /* Dynamic.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AC1AE70224721BBB00811388 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE70324721BC600811388 /* ListCellViewModel.swift */,
+				AC1AE70924721F4300811388 /* ListCellViewModelObject.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AC1AE70524721DB000811388 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE70624721DB000811388 /* Cells */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		AC1AE70624721DB000811388 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE70724721DC200811388 /* ListTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,14 +440,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1AE6F62472102000811388 /* ListViewModelObject.swift in Sources */,
 				AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */,
 				AC1AE6E72471F86600811388 /* CoreDataDao.swift in Sources */,
 				AC1AE6E02471F81D00811388 /* Record.swift in Sources */,
+				AC1AE6F424720F4900811388 /* Dynamic.swift in Sources */,
+				AC1AE70824721DC300811388 /* ListTableViewCell.swift in Sources */,
 				AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */,
 				AC1AE6E42471F84000811388 /* DatabaseInterface.swift in Sources */,
 				AC1AE6892471C00100811388 /* AppDelegate.swift in Sources */,
 				AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */,
 				AC1AE6C32471C86500811388 /* String+Localization.swift in Sources */,
+				AC1AE70A24721F4300811388 /* ListCellViewModelObject.swift in Sources */,
+				AC1AE70424721BC600811388 /* ListCellViewModel.swift in Sources */,
 				AC1AE6ED247207C800811388 /* ListView.swift in Sources */,
 				AC1AE6EF247207D100811388 /* ListViewModel.swift in Sources */,
 				AC1AE6CC2471CA3300811388 /* Coordinator.swift in Sources */,
