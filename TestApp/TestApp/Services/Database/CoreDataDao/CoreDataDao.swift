@@ -11,7 +11,7 @@ import CoreData
 class CoreDataDao {
     private struct Constants {
         static let coreDataName = "TestApp"
-        static let recordObjectName = "RecordObject"
+        static let recordObjectName = "RecordEntity"
     }
     
     private lazy var persistentContainer: NSPersistentContainer = {
@@ -38,8 +38,8 @@ class CoreDataDao {
     }
 }
 
-// MARK: - DatabaseInterface methods implementation
-extension CoreDataDao: DatabaseInterface {
+// MARK: - AddDaoType methods implementation
+extension CoreDataDao: AddDaoType {
     func save(record: Record, completion: (Error?) -> Void) {
         let context = persistentContainer.viewContext
         
@@ -48,11 +48,14 @@ extension CoreDataDao: DatabaseInterface {
         fill(managedObject: object, with: record)
         saveContext()
     }
-    
-    func update(record: Record, completion: (Error?) -> Void) {
+}
+
+// MARK: - UpdateDaoType methods implementation
+extension CoreDataDao: UpdateDaoType {
+    func update(name: String, with record: Record, completion: (Error?) -> Void) {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.recordObjectName)
-        fetchRequest.predicate = NSPredicate(format: "name = %@", record.name)
+        fetchRequest.predicate = NSPredicate(format: "name = %@", name)
         
         do {
             let result = try context.fetch(fetchRequest)
@@ -64,7 +67,10 @@ extension CoreDataDao: DatabaseInterface {
             completion(error)
         }
     }
-    
+}
+
+// MARK: - DeleteDaoType methods implementation
+extension CoreDataDao: DeleteDaoType {
     func delete(record: Record, completion: (Error?) -> Void) {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.recordObjectName)
@@ -80,7 +86,10 @@ extension CoreDataDao: DatabaseInterface {
             completion(error)
         }
     }
-    
+}
+
+// MARK: - LoadDaoType methods implementation
+extension CoreDataDao: LoadDaoType {
     func loadItems(completion: (([Record], Error?) -> Void)) {
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.recordObjectName)

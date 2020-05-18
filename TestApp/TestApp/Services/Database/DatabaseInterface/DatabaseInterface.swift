@@ -8,11 +8,20 @@
 
 import Foundation
 
-protocol DatabaseInterface {
-    typealias DatabaseOperationCompletion = ((Error?) -> Void)
-    
+typealias DatabaseOperationCompletion = ((Error?) -> Void)
+
+protocol AddDaoType {
     func save(record: Record, completion: DatabaseOperationCompletion)
-    func update(record: Record, completion: DatabaseOperationCompletion)
+}
+
+protocol UpdateDaoType {
+    func update(name: String, with record: Record, completion: DatabaseOperationCompletion)
+}
+
+protocol DeleteDaoType {
     func delete(record: Record, completion: DatabaseOperationCompletion)
+}
+
+protocol LoadDaoType {
     func loadItems(completion: (([Record], Error?) -> Void))
 }

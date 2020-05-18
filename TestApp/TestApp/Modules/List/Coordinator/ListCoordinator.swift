@@ -22,6 +22,8 @@ class ListCoordinator: TabCoordinator {
         }
     }
     
+    private let dao: DatabaseDaoType
+    
     var rootViewController: UIViewController {
         let controller = navigationController
         controller.tabBarItem = UITabBarItem(title: Localization.Tabs.list.localized,
@@ -43,9 +45,12 @@ class ListCoordinator: TabCoordinator {
         view.title = Localization.Tabs.list.localized
         
         if let requiredView = view as? ListView {
-            let viewModel = ListViewModelObject()
-            viewModel.shouldManageItem = { [unowned self] name in
-                self.openSaveRecordScreen(name: name ?? "")
+            let viewModel = ListViewModelObject(dao: self.dao)
+            viewModel.shouldAddNewItem = { [unowned self] in
+                self.openAddRecordScreen()
+            }
+            viewModel.shouldEditItem = { [unowned self] name in
+                self.openEditRecordScreen(name: name)
             }
             
             requiredView.viewModel = viewModel
@@ -56,23 +61,36 @@ class ListCoordinator: TabCoordinator {
     
     private let addItemStoryboard = UIStoryboard(name: Constants.Storyboard.AddItem.name,
                                                  bundle: Bundle(for: SaveRecordView.self))
+    
+    init(dao: DatabaseDaoType) {
+        self.dao = dao
+    }
 }
 
 // MARK: - Routing methods implementation
 private extension ListCoordinator {
-    func openSaveRecordScreen(name: String) {
-        let navigationController = UINavigationController(rootViewController: saveRecordViewController(with: name))
+    func openAddRecordScreen() {
+        let decorator = AddItemDecorator(decoratee: dao)
+        let navigationController = UINavigationController(rootViewController: saveRecordViewController(with: "",
+                                                                                                       decorator: decorator))
+        self.navigationController.present(navigationController, animated: true, completion: nil)
+    }
+    
+    func openEditRecordScreen(name: String) {
+        let decorator = EditItemDecorator(decoratee: dao, name: name)
+        let navigationController = UINavigationController(rootViewController: saveRecordViewController(with: name,
+                                                                                                       decorator: decorator))
         self.navigationController.present(navigationController, animated: true, completion: nil)
     }
 }
 
 // MARK: - Private methods implementation
 private extension ListCoordinator {
-    func saveRecordViewController(with name: String) -> UIViewController {
+    func saveRecordViewController(with name: String, decorator: SaveDataDecoratable) -> UIViewController {
         let view = self.addItemStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.AddItem.viewIdentifier)
         
         if let requiredView = view as? SaveRecordView {
-            let viewModel = AddRecordViewModelObject(name: name)
+            let viewModel = AddRecordViewModelObject(name: name, daoDecorator: decorator)
             viewModel.shouldFinish = { [unowned self] in
                 self.navigationController.dismiss(animated: true, completion: nil)
             }

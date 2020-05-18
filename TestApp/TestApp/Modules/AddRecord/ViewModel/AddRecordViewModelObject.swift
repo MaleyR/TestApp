@@ -9,6 +9,8 @@
 import Foundation
 
 class AddRecordViewModelObject: AddRecordViewModel {
+    private let daoDecorator: SaveDataDecoratable
+    
     private var newName: String
     
     var name: Dynamic<String>
@@ -16,14 +18,16 @@ class AddRecordViewModelObject: AddRecordViewModel {
     
     var shouldFinish: (() -> Void)?
     
-    init(name: String) {
+    init(name: String, daoDecorator: SaveDataDecoratable) {
         self.name = .init(name)
         self.hasChanges = .init(false)
         self.newName = name
+        self.daoDecorator = daoDecorator
     }
     
     func shouldAddItem() {
-        // TODO: add data to database
+        daoDecorator.save(name: newName)
+        shouldFinish?()
     }
     
     func shouldCancel() {

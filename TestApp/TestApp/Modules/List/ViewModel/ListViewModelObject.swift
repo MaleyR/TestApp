@@ -9,30 +9,48 @@
 import Foundation
 
 class ListViewModelObject: ListViewModel {
+    private let dao: LoadDaoType & DeleteDaoType
+    
     private var records: [Record] = []
     
     var cellViewModels: Dynamic<[ListCellViewModel]>
     
-    var shouldManageItem: ((String?) -> Void)?
+    var shouldAddNewItem: (() -> Void)?
+    var shouldEditItem: ((String) -> Void)?
     
-    init() {
-        let object1 = ListCellViewModelObject(name: "name 1")
-        let object2 = ListCellViewModelObject(name: "name 2")
-        let object3 = ListCellViewModelObject(name: "name 3")
-        self.cellViewModels = Dynamic([object1, object2, object3])
+    init(dao: LoadDaoType & DeleteDaoType) {
+        self.cellViewModels = Dynamic([])
+        self.dao = dao
+        self.loadData()
     }
     
     func shouldSelectItem(at index: Int) {
-//        cellViewModels.value[index].switchSelection()
-        shouldManageItem?(cellViewModels.value[index].name.value)
+        shouldEditItem?(cellViewModels.value[index].name.value)
     }
     
     func shouldAddItem() {
-        shouldManageItem?(nil)
+        shouldAddNewItem?()
     }
     
     func shouldRemoveItem(at index: Int) {
-        // Delete item from database
+        let record = records[index]
+        dao.delete(record: record) { (error) in
+            // Handle error
+        }
+    }
+}
+
+// MARK: - Private methods implementation
+private extension ListViewModelObject {
+    func loadData() {
+        dao.loadItems { [unowned self] (records, error) in
+            self.records = records
+            self.cellViewModels = .init(self.viewModels(from: records))
+        }
+    }
+    
+    func viewModels(from records: [Record]) -> [ListCellViewModel] {
+        return records.map({ ListCellViewModelObject(name: $0.name) })
     }
 }
 

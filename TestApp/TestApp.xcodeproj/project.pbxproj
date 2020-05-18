@@ -34,6 +34,9 @@
 		AC1AE711247226A700811388 /* SaveRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE710247226A700811388 /* SaveRecordView.swift */; };
 		AC1AE713247226DA00811388 /* AddRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE712247226DA00811388 /* AddRecordViewModel.swift */; };
 		AC1AE715247226E600811388 /* AddRecordViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE714247226E600811388 /* AddRecordViewModelObject.swift */; };
+		AC1AE71824723BEB00811388 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE71724723BEB00811388 /* Services.swift */; };
+		AC1AE71A24723C0700811388 /* ServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE71924723C0700811388 /* ServicesFactory.swift */; };
+		AC1AE7272472413F00811388 /* SaveDataDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7262472413F00811388 /* SaveDataDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		AC1AE710247226A700811388 /* SaveRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecordView.swift; sourceTree = "<group>"; };
 		AC1AE712247226DA00811388 /* AddRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewModel.swift; sourceTree = "<group>"; };
 		AC1AE714247226E600811388 /* AddRecordViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewModelObject.swift; sourceTree = "<group>"; };
+		AC1AE71724723BEB00811388 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		AC1AE71924723C0700811388 /* ServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesFactory.swift; sourceTree = "<group>"; };
+		AC1AE7262472413F00811388 /* SaveDataDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 		AC1AE6BA2471C79D00811388 /* Staff */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE71624723BE300811388 /* Services */,
 				AC1AE6BB2471C79D00811388 /* Localization */,
 			);
 			path = Staff;
@@ -378,6 +385,7 @@
 		AC1AE70B247225B600811388 /* AddRecord */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE71B24723FA400811388 /* Staff */,
 				AC1AE70D247225E300811388 /* ViewModel */,
 				AC1AE70C247225E300811388 /* View */,
 				AC1AE70E247225F600811388 /* AddRecord.storyboard */,
@@ -400,6 +408,31 @@
 				AC1AE714247226E600811388 /* AddRecordViewModelObject.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC1AE71624723BE300811388 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE71724723BEB00811388 /* Services.swift */,
+				AC1AE71924723C0700811388 /* ServicesFactory.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AC1AE71B24723FA400811388 /* Staff */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE7212472411400811388 /* SaveDataDecorator */,
+			);
+			path = Staff;
+			sourceTree = "<group>";
+		};
+		AC1AE7212472411400811388 /* SaveDataDecorator */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE7262472413F00811388 /* SaveDataDecorator.swift */,
+			);
+			path = SaveDataDecorator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,8 +513,10 @@
 				AC1AE6F62472102000811388 /* ListViewModelObject.swift in Sources */,
 				AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */,
 				AC1AE6E72471F86600811388 /* CoreDataDao.swift in Sources */,
+				AC1AE71824723BEB00811388 /* Services.swift in Sources */,
 				AC1AE713247226DA00811388 /* AddRecordViewModel.swift in Sources */,
 				AC1AE6E02471F81D00811388 /* Record.swift in Sources */,
+				AC1AE71A24723C0700811388 /* ServicesFactory.swift in Sources */,
 				AC1AE6F424720F4900811388 /* Dynamic.swift in Sources */,
 				AC1AE70824721DC300811388 /* ListTableViewCell.swift in Sources */,
 				AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */,
@@ -489,6 +524,7 @@
 				AC1AE6E42471F84000811388 /* DatabaseInterface.swift in Sources */,
 				AC1AE6892471C00100811388 /* AppDelegate.swift in Sources */,
 				AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */,
+				AC1AE7272472413F00811388 /* SaveDataDecorator.swift in Sources */,
 				AC1AE6C32471C86500811388 /* String+Localization.swift in Sources */,
 				AC1AE70A24721F4300811388 /* ListCellViewModelObject.swift in Sources */,
 				AC1AE70424721BC600811388 /* ListCellViewModel.swift in Sources */,

@@ -14,6 +14,8 @@ class AppCoordinator: Coordinator {
     private let window: UIWindow
     private var childCoordinators: [TabCoordinator] = []
     
+    private var services: Services = ServicesFactory()
+    
     private lazy var tabBarController: UITabBarController = {
         let controller = UITabBarController()
         
@@ -35,7 +37,7 @@ class AppCoordinator: Coordinator {
 
 private extension AppCoordinator {
     func listCoordinator() -> TabCoordinator {
-        let coordinator = ListCoordinator()
+        let coordinator = ListCoordinator(dao: services.databaseDao)
         return coordinator
     }
     
