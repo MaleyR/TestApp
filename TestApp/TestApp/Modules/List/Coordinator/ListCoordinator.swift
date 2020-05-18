@@ -9,6 +9,13 @@
 import UIKit
 
 class ListCoordinator: TabCoordinator {
+    private struct Constants {
+        struct Storyboard {
+            static let name = "List"
+            static let viewIdentifier = "ListView"
+        }
+    }
+    
     var rootViewController: UIViewController {
         let controller = navigationController
         controller.tabBarItem = UITabBarItem(title: Localization.Tabs.list.localized,
@@ -18,6 +25,16 @@ class ListCoordinator: TabCoordinator {
     }
     
     private lazy var navigationController: UINavigationController = {
-        return UINavigationController()
+        let navigationController = UINavigationController(rootViewController: self.viewController)
+        return navigationController
+    }()
+    
+    private let storyboard = UIStoryboard(name: Constants.Storyboard.name,
+                                                 bundle: Bundle(for: ListView.self))
+    
+    private lazy var viewController: UIViewController = {
+        let view = self.storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.viewIdentifier)
+        view.title = Localization.Tabs.list.localized
+        return view
     }()
 }
