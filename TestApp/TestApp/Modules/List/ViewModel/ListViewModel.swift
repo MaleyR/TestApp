@@ -11,5 +11,6 @@ import Foundation
 protocol ListViewModel {
     var cellViewModels: Dynamic<[ListCellViewModel]> { get }
     
-    func shouldSelectRecord(at index: Int)
+    func shouldSelectItem(at index: Int)
+    func shouldAddItem()
 }

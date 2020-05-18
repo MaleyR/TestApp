@@ -13,6 +13,8 @@ class ListViewModelObject: ListViewModel {
     
     var cellViewModels: Dynamic<[ListCellViewModel]>
     
+    var shouldManageItem: ((String?) -> Void)?
+    
     init() {
         let object1 = ListCellViewModelObject(name: "name 1")
         let object2 = ListCellViewModelObject(name: "name 2")
@@ -20,8 +22,13 @@ class ListViewModelObject: ListViewModel {
         self.cellViewModels = Dynamic([object1, object2, object3])
     }
     
-    func shouldSelectRecord(at index: Int) {
-        cellViewModels.value[index].switchSelection()
+    func shouldSelectItem(at index: Int) {
+//        cellViewModels.value[index].switchSelection()
+        shouldManageItem?(cellViewModels.value[index].name.value)
+    }
+    
+    func shouldAddItem() {
+        shouldManageItem?(nil)
     }
 }
 

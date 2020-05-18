@@ -14,4 +14,19 @@ struct Localization {
         static let list = "list"
         static let service = "service"
     }
+    
+    struct List {
+        static let add = "add"
+    }
+    
+    struct Common {
+        static let back = "back"
+        static let ok = "ok"
+        static let cancel = "cancel"
+    }
+    
+    struct SaveRecord {
+        static let confirmationAlertTitle = "warning"
+        static let confirmationAlertText = "save_confirmation"
+    }
 }

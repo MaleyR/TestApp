@@ -6,5 +6,18 @@
   Copyright © 2020 Ruslan Maley. All rights reserved.
 */
 
+// Tabs
 "list" = "Список";
 "service" = "Служба";
+
+// List
+"add" = "Добавить";
+
+// Common
+"back" = "Назад";
+"ok" = "ОК";
+"cancel" = "Отмена";
+
+// Save record
+"warning" = "Внимание!";
+"save_confirmation" = "Хотите ли Вы сохранить изменения?";

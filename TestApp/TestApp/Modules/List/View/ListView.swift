@@ -29,8 +29,16 @@ class ListView: UIViewController {
 // MARK: - Private extension implementation
 private extension ListView {
     func setup() {
+        setupNavigationBar()
         setupTableView()
         setupViewModel()
+    }
+    
+    func setupNavigationBar() {
+        let addButtonItem = UIBarButtonItem(title: Localization.List.add.localized,
+                                            style: .plain,
+                                            target: self, action: #selector(addButtonPressed))
+        navigationItem.rightBarButtonItem = addButtonItem
     }
     
     func setupTableView() {
@@ -45,11 +53,18 @@ private extension ListView {
     }
 }
 
+// MARK: - Custom actions implementation
+private extension ListView {
+    @objc func addButtonPressed(sender: Any) {
+        viewModel?.shouldAddItem()
+    }
+}
+
 // MARK: - UITableViewDelegate methods implementation
 extension ListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        viewModel?.shouldSelectRecord(at: indexPath.row)
+        viewModel?.shouldSelectItem(at: indexPath.row)
     }
 }
 
