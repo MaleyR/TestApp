@@ -42,7 +42,8 @@ private extension ListView {
     }
     
     func setupTableView() {
-        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
+        tableView.register(UINib(nibName: String(describing: ListTableViewCell.self), bundle: nil),
+                           forCellReuseIdentifier: Constants.cellIdentifier)
     }
     
     func setupViewModel() {
@@ -101,6 +102,9 @@ extension ListView: UITableViewDataSource {
         
         if let requiredCell = cell as? ListTableViewCell {
             requiredCell.viewModel = cellViewModels[indexPath.row]
+            requiredCell.checkMarkSelected = { [unowned self] in
+                self.viewModel?.shouldCheckItem(at: indexPath.row)
+            }
         }
         
         return cell

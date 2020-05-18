@@ -28,6 +28,11 @@ class ListViewModelObject: ListViewModel {
         shouldEditItem?(cellViewModels.value[index].name.value)
     }
     
+    func shouldCheckItem(at index: Int) {
+        let cellViewModel = cellViewModels.value[index]
+        cellViewModel.isSelected.value = !cellViewModel.isSelected.value
+    }
+    
     func shouldAddItem() {
         shouldAddNewItem?()
     }

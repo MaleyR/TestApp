@@ -12,6 +12,7 @@ protocol ListViewModel {
     var cellViewModels: Dynamic<[ListCellViewModel]> { get }
     
     func shouldSelectItem(at index: Int)
+    func shouldCheckItem(at index: Int)
     func shouldAddItem()
     func shouldRemoveItem(at index: Int)
 }
