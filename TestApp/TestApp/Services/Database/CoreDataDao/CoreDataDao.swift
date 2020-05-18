@@ -14,6 +14,8 @@ class CoreDataDao {
         static let recordObjectName = "RecordEntity"
     }
     
+    private var observers: [DaoDataObserver] = []
+    
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: Constants.coreDataName)
         container.loadPersistentStores { (storeDescription, error) in
@@ -25,6 +27,10 @@ class CoreDataDao {
         return container
     }()
     
+    init() {
+        subsribeToDataChanges()
+    }
+    
     private func saveContext() {
         let context = persistentContainer.viewContext
         
@@ -35,6 +41,11 @@ class CoreDataDao {
                 fatalError(error.localizedDescription)
             }
         }
+    }
+    
+    deinit {
+        observers.removeAll()
+        unsubscribeFromDataChanges()
     }
 }
 
@@ -124,6 +135,42 @@ private extension CoreDataDao {
 fileprivate extension Record {
     static func from(managedObject: RecordEntity) -> Record {
         return Record(name: managedObject.name ?? "")
+    }
+}
+
+// MARK: - Data Observing methods implementation
+extension CoreDataDao: DaoDataObserving {
+    func addDataObserver(_ observer: DaoDataObserver) {
+        if !observers.contains(where: { observer === $0 }) {
+            observers.append(observer)
+        }
+    }
+    
+    func removeDataObserver(_ observer: DaoDataObserver) {
+        guard let index = observers.firstIndex(where: { $0 === observer }) else { return }
+        observers.remove(at: index)
+    }
+}
+
+// MARK: - Data changing notifications handling
+private extension CoreDataDao {
+    func subsribeToDataChanges() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(dataChanged),
+                                               name: Notification.Name.NSManagedObjectContextObjectsDidChange,
+                                               object: nil)
+    }
+    
+    func unsubscribeFromDataChanges() {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.Name.NSManagedObjectContextObjectsDidChange,
+                                                  object: nil)
+    }
+    
+    @objc func dataChanged(notification: Notification) {
+        for observer in observers {
+            observer.dataChanged()
+        }
     }
 }
 

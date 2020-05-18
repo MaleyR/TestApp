@@ -25,3 +25,13 @@ protocol DeleteDaoType {
 protocol LoadDaoType {
     func loadItems(completion: (([Record], Error?) -> Void))
 }
+
+// MARK: - Data changing observing
+protocol DaoDataObserver: class {
+    func dataChanged()
+}
+
+protocol DaoDataObserving {
+    func addDataObserver(_ observer: DaoDataObserver)
+    func removeDataObserver(_ observer: DaoDataObserver)
+}

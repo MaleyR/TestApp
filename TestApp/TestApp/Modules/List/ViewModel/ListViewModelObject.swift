@@ -9,7 +9,7 @@
 import Foundation
 
 class ListViewModelObject: ListViewModel {
-    private let dao: LoadDaoType & DeleteDaoType
+    private let dao: LoadDaoType & DeleteDaoType & DaoDataObserving
     
     private var records: [Record] = []
     
@@ -18,10 +18,16 @@ class ListViewModelObject: ListViewModel {
     var shouldAddNewItem: (() -> Void)?
     var shouldEditItem: ((String) -> Void)?
     
-    init(dao: LoadDaoType & DeleteDaoType) {
+    deinit {
+        self.dao.removeDataObserver(self)
+    }
+    
+    init(dao: LoadDaoType & DeleteDaoType & DaoDataObserving) {
         self.cellViewModels = Dynamic([])
         self.dao = dao
         self.loadData()
+        
+        self.dao.addDataObserver(self)
     }
     
     func shouldSelectItem(at index: Int) {
@@ -50,12 +56,19 @@ private extension ListViewModelObject {
     func loadData() {
         dao.loadItems { [unowned self] (records, error) in
             self.records = records
-            self.cellViewModels = .init(self.viewModels(from: records))
+            self.cellViewModels.value = self.viewModels(from: records.sorted(by: { $0.name < $1.name }))
         }
     }
     
     func viewModels(from records: [Record]) -> [ListCellViewModel] {
         return records.map({ ListCellViewModelObject(name: $0.name) })
+    }
+}
+
+// MARK: - Implementation of data observer methods
+extension ListViewModelObject: DaoDataObserver {
+    func dataChanged() {
+        loadData()
     }
 }
 

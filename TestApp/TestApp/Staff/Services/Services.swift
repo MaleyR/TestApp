@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias DatabaseDaoType = AddDaoType & UpdateDaoType & DeleteDaoType & LoadDaoType
+typealias DatabaseDaoType = AddDaoType & UpdateDaoType & DeleteDaoType & LoadDaoType & DaoDataObserving
 
 protocol Services {
     var databaseDao: DatabaseDaoType { get }
