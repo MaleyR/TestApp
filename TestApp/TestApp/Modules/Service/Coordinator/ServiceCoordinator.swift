@@ -9,6 +9,13 @@
 import UIKit
 
 class ServiceCoordinator: TabCoordinator {
+    private struct Constants {
+        struct Storyboard {
+            static let name = "Service"
+            static let viewIdentifier = "ServiceView"
+        }
+    }
+    
     var rootViewController: UIViewController {
         let viewController = navigationController
         viewController.tabBarItem = UITabBarItem(title: Localization.Tabs.service.localized,
@@ -18,7 +25,16 @@ class ServiceCoordinator: TabCoordinator {
     }
     
     private lazy var navigationController: UINavigationController = {
-        let navigationController = UINavigationController()
+        let navigationController = UINavigationController(rootViewController: self.viewController)
         return navigationController
+    }()
+    
+    private let storyboard = UIStoryboard(name: Constants.Storyboard.name,
+                                          bundle: Bundle(for: ServiceView.self))
+    
+    private lazy var viewController: UIViewController = {
+        let viewController = self.storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.viewIdentifier)
+        viewController.title = Localization.Tabs.service.localized
+        return viewController
     }()
 }

@@ -48,6 +48,14 @@
 		AC1AE74024726F6200811388 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE73F24726F6200811388 /* NetworkRequest.swift */; };
 		AC1AE74224726FBB00811388 /* GetCatalogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE74124726FBB00811388 /* GetCatalogRequest.swift */; };
 		AC1AE7442472716E00811388 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7432472716E00811388 /* Parser.swift */; };
+		AC1AE7492472744000811388 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7482472744000811388 /* ServiceView.swift */; };
+		AC1AE74B2472744A00811388 /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE74A2472744A00811388 /* ServiceViewModel.swift */; };
+		AC1AE74D2472745600811388 /* ServiceViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE74C2472745600811388 /* ServiceViewModelObject.swift */; };
+		AC1AE74F247274C000811388 /* Service.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1AE74E247274C000811388 /* Service.storyboard */; };
+		AC1AE7572472770900811388 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7552472770900811388 /* ServiceTableViewCell.swift */; };
+		AC1AE7582472770900811388 /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1AE7562472770900811388 /* ServiceTableViewCell.xib */; };
+		AC1AE75A2472771800811388 /* ServiceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7592472771800811388 /* ServiceCellViewModel.swift */; };
+		AC1AE75C2472772600811388 /* ServiceCellViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE75B2472772600811388 /* ServiceCellViewModelObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +102,14 @@
 		AC1AE73F24726F6200811388 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		AC1AE74124726FBB00811388 /* GetCatalogRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCatalogRequest.swift; sourceTree = "<group>"; };
 		AC1AE7432472716E00811388 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		AC1AE7482472744000811388 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		AC1AE74A2472744A00811388 /* ServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
+		AC1AE74C2472745600811388 /* ServiceViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModelObject.swift; sourceTree = "<group>"; };
+		AC1AE74E247274C000811388 /* Service.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Service.storyboard; sourceTree = "<group>"; };
+		AC1AE7552472770900811388 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		AC1AE7562472770900811388 /* ServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceTableViewCell.xib; sourceTree = "<group>"; };
+		AC1AE7592472771800811388 /* ServiceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellViewModel.swift; sourceTree = "<group>"; };
+		AC1AE75B2472772600811388 /* ServiceCellViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellViewModelObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +312,7 @@
 				AC1AE6D32471D2A400811388 /* Coordinator */,
 				AC1AE6D22471D2A400811388 /* ViewModel */,
 				AC1AE6D42471D2A400811388 /* View */,
+				AC1AE74E247274C000811388 /* Service.storyboard */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -303,6 +320,8 @@
 		AC1AE6D22471D2A400811388 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE74A2472744A00811388 /* ServiceViewModel.swift */,
+				AC1AE74C2472745600811388 /* ServiceViewModelObject.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -318,6 +337,8 @@
 		AC1AE6D42471D2A400811388 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE750247276D200811388 /* Subviews */,
+				AC1AE7482472744000811388 /* ServiceView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,6 +529,49 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		AC1AE750247276D200811388 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE751247276D200811388 /* Cells */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		AC1AE751247276D200811388 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE752247276F600811388 /* ServiceTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AC1AE752247276F600811388 /* ServiceTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE753247276F600811388 /* ViewModel */,
+				AC1AE754247276F600811388 /* Cell */,
+			);
+			path = ServiceTableViewCell;
+			sourceTree = "<group>";
+		};
+		AC1AE753247276F600811388 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE7592472771800811388 /* ServiceCellViewModel.swift */,
+				AC1AE75B2472772600811388 /* ServiceCellViewModelObject.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC1AE754247276F600811388 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE7552472770900811388 /* ServiceTableViewCell.swift */,
+				AC1AE7562472770900811388 /* ServiceTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -569,9 +633,11 @@
 			files = (
 				AC1AE6B92471C78100811388 /* Localizable.strings in Resources */,
 				AC1AE6952471C00700811388 /* LaunchScreen.storyboard in Resources */,
+				AC1AE74F247274C000811388 /* Service.storyboard in Resources */,
 				AC1AE6F1247207E500811388 /* List.storyboard in Resources */,
 				AC1AE6B82471C78100811388 /* Localizable.strings in Resources */,
 				AC1AE6922471C00700811388 /* Assets.xcassets in Resources */,
+				AC1AE7582472770900811388 /* ServiceTableViewCell.xib in Resources */,
 				AC1AE70F247225F600811388 /* AddRecord.storyboard in Resources */,
 				AC1AE729247247E800811388 /* ListTableViewCell.xib in Resources */,
 			);
@@ -598,25 +664,31 @@
 				AC1AE72D2472547A00811388 /* W3XMLParser.swift in Sources */,
 				AC1AE6F424720F4900811388 /* Dynamic.swift in Sources */,
 				AC1AE73A2472693000811388 /* NetworkDao.swift in Sources */,
+				AC1AE75C2472772600811388 /* ServiceCellViewModelObject.swift in Sources */,
 				AC1AE70824721DC300811388 /* ListTableViewCell.swift in Sources */,
 				AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */,
 				AC1AE715247226E600811388 /* AddRecordViewModelObject.swift in Sources */,
 				AC1AE6E42471F84000811388 /* DatabaseInterface.swift in Sources */,
 				AC1AE73624725AF100811388 /* W3XMLParserDescriptor.swift in Sources */,
+				AC1AE75A2472771800811388 /* ServiceCellViewModel.swift in Sources */,
 				AC1AE6892471C00100811388 /* AppDelegate.swift in Sources */,
 				AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */,
 				AC1AE7272472413F00811388 /* SaveDataDecorator.swift in Sources */,
 				AC1AE6C32471C86500811388 /* String+Localization.swift in Sources */,
+				AC1AE7572472770900811388 /* ServiceTableViewCell.swift in Sources */,
 				AC1AE73424725A1900811388 /* W3XMLParserNode.swift in Sources */,
 				AC1AE70A24721F4300811388 /* ListCellViewModelObject.swift in Sources */,
 				AC1AE70424721BC600811388 /* ListCellViewModel.swift in Sources */,
+				AC1AE74D2472745600811388 /* ServiceViewModelObject.swift in Sources */,
 				AC1AE7312472562500811388 /* CD.swift in Sources */,
 				AC1AE6ED247207C800811388 /* ListView.swift in Sources */,
 				AC1AE711247226A700811388 /* SaveRecordView.swift in Sources */,
 				AC1AE6EF247207D100811388 /* ListViewModel.swift in Sources */,
+				AC1AE7492472744000811388 /* ServiceView.swift in Sources */,
 				AC1AE6CC2471CA3300811388 /* Coordinator.swift in Sources */,
 				AC1AE6EB2471FAA100811388 /* TestApp.xcdatamodeld in Sources */,
 				AC1AE7442472716E00811388 /* Parser.swift in Sources */,
+				AC1AE74B2472744A00811388 /* ServiceViewModel.swift in Sources */,
 				AC1AE6D82471D2C100811388 /* ServiceCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
