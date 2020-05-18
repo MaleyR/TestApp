@@ -8,15 +8,15 @@
 
 import Foundation
 
-class W3XMLParser: NSObject {
+class W3XMLParser: NSObject, Parser {
     private var xmlParser: XMLParser!
     private let descriptor = W3XMLParserDescriptor()
     
     private var completion: (([String : Any]) -> Void)?
     
-    func parse(url: URL, with completion: (([String : Any]) -> Void)?) {
+    func parse(data: Data, with completion: @escaping (([String : Any]) -> Void)) {
         self.completion = completion
-        xmlParser = XMLParser(contentsOf: url)
+        xmlParser = XMLParser(data: data)
         xmlParser.delegate = self
         xmlParser.parse()
     }
