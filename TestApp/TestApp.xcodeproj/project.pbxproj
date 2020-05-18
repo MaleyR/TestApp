@@ -18,6 +18,10 @@
 		AC1AE6CC2471CA3300811388 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6CB2471CA3300811388 /* Coordinator.swift */; };
 		AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6D52471D2B500811388 /* ListCoordinator.swift */; };
 		AC1AE6D82471D2C100811388 /* ServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6D72471D2C100811388 /* ServiceCoordinator.swift */; };
+		AC1AE6E02471F81D00811388 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6DF2471F81D00811388 /* Record.swift */; };
+		AC1AE6E42471F84000811388 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6E32471F84000811388 /* DatabaseInterface.swift */; };
+		AC1AE6E72471F86600811388 /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6E62471F86600811388 /* CoreDataDao.swift */; };
+		AC1AE6EB2471FAA100811388 /* TestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6E92471FAA100811388 /* TestApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		AC1AE6CB2471CA3300811388 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AC1AE6D52471D2B500811388 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		AC1AE6D72471D2C100811388 /* ServiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCoordinator.swift; sourceTree = "<group>"; };
+		AC1AE6DF2471F81D00811388 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		AC1AE6E32471F84000811388 /* DatabaseInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseInterface.swift; sourceTree = "<group>"; };
+		AC1AE6E62471F86600811388 /* CoreDataDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDao.swift; sourceTree = "<group>"; };
+		AC1AE6EA2471FAA100811388 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +74,12 @@
 		AC1AE6872471C00100811388 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE6DE2471F80F00811388 /* Models */,
 				AC1AE6C42471C9D100811388 /* Modules */,
 				AC1AE6BE2471C84E00811388 /* Extensions */,
 				AC1AE6BA2471C79D00811388 /* Staff */,
 				AC1AE6AE2471C74A00811388 /* Resources */,
+				AC1AE6DA2471F59E00811388 /* Services */,
 				AC1AE6882471C00100811388 /* AppDelegate.swift */,
 				AC1AE6912471C00700811388 /* Assets.xcassets */,
 				AC1AE6932471C00700811388 /* LaunchScreen.storyboard */,
@@ -81,6 +91,7 @@
 		AC1AE6AE2471C74A00811388 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE6E82471FA9800811388 /* CoreData */,
 				AC1AE6AF2471C74A00811388 /* Localization */,
 			);
 			path = Resources;
@@ -250,6 +261,55 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AC1AE6DA2471F59E00811388 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6E12471F84000811388 /* Database */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AC1AE6DE2471F80F00811388 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6DF2471F81D00811388 /* Record.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC1AE6E12471F84000811388 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6E22471F84000811388 /* DatabaseInterface */,
+				AC1AE6E52471F85B00811388 /* CoreDataDao */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		AC1AE6E22471F84000811388 /* DatabaseInterface */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6E32471F84000811388 /* DatabaseInterface.swift */,
+			);
+			path = DatabaseInterface;
+			sourceTree = "<group>";
+		};
+		AC1AE6E52471F85B00811388 /* CoreDataDao */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6E62471F86600811388 /* CoreDataDao.swift */,
+			);
+			path = CoreDataDao;
+			sourceTree = "<group>";
+		};
+		AC1AE6E82471FA9800811388 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE6E92471FAA100811388 /* TestApp.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,11 +384,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */,
+				AC1AE6E72471F86600811388 /* CoreDataDao.swift in Sources */,
+				AC1AE6E02471F81D00811388 /* Record.swift in Sources */,
 				AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */,
+				AC1AE6E42471F84000811388 /* DatabaseInterface.swift in Sources */,
 				AC1AE6892471C00100811388 /* AppDelegate.swift in Sources */,
 				AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */,
 				AC1AE6C32471C86500811388 /* String+Localization.swift in Sources */,
 				AC1AE6CC2471CA3300811388 /* Coordinator.swift in Sources */,
+				AC1AE6EB2471FAA100811388 /* TestApp.xcdatamodeld in Sources */,
 				AC1AE6D82471D2C100811388 /* ServiceCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +599,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC1AE6E92471FAA100811388 /* TestApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC1AE6EA2471FAA100811388 /* Model.xcdatamodel */,
+			);
+			currentVersion = AC1AE6EA2471FAA100811388 /* Model.xcdatamodel */;
+			path = TestApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AC1AE67D2471C00100811388 /* Project object */;
 }
