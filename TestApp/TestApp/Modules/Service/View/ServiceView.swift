@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ServiceView: UIViewController {
+class ServiceView: LoadableViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private struct Constants {
@@ -43,6 +43,7 @@ private extension ServiceView {
     func setupViewModel() {
         viewModel?.isLoading.bind({ [unowned self] (isLoading) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+            self.updateLoadingIndicator(isVisible: isLoading)
         })
         
         viewModel?.cellViewModels.bindAndFire({ [unowned self] (cellViewModels) in

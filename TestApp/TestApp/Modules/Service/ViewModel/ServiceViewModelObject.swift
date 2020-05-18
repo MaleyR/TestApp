@@ -28,9 +28,11 @@ class ServiceViewModelObject: ServiceViewModel {
 // MARK: - Private methods implementation
 private extension ServiceViewModelObject {
     func loadData() {
+        isLoading.value = true
         dao.loadObjects { [unowned self] (objects, error) in
             DispatchQueue.main.async {
                 self.cellViewModels.value = self.viewModels(from: objects)
+                self.isLoading.value = false
             }
         }
     }

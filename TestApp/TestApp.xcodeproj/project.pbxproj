@@ -55,6 +55,7 @@
 		AC1AE75C2472772600811388 /* ServiceCellViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE75B2472772600811388 /* ServiceCellViewModelObject.swift */; };
 		AC1AE7602472866500811388 /* ServiceDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE75F2472866500811388 /* ServiceDao.swift */; };
 		AC1AE7622472867F00811388 /* ServiceDaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7612472867F00811388 /* ServiceDaoType.swift */; };
+		AC1AE7812472C54000811388 /* LoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7802472C54000811388 /* LoadableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		AC1AE75B2472772600811388 /* ServiceCellViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellViewModelObject.swift; sourceTree = "<group>"; };
 		AC1AE75F2472866500811388 /* ServiceDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDao.swift; sourceTree = "<group>"; };
 		AC1AE7612472867F00811388 /* ServiceDaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDaoType.swift; sourceTree = "<group>"; };
+		AC1AE7802472C54000811388 /* LoadableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 		AC1AE6C92471CA1900811388 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE77F2472C53500811388 /* ViewController */,
 				AC1AE6CA2471CA2B00811388 /* Coordinator */,
 			);
 			path = Common;
@@ -577,6 +580,14 @@
 			path = ServiceDao;
 			sourceTree = "<group>";
 		};
+		AC1AE77F2472C53500811388 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE7802472C54000811388 /* LoadableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -657,6 +668,7 @@
 			files = (
 				AC1AE6F62472102000811388 /* ListViewModelObject.swift in Sources */,
 				AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */,
+				AC1AE7812472C54000811388 /* LoadableViewController.swift in Sources */,
 				AC1AE74024726F6200811388 /* NetworkRequest.swift in Sources */,
 				AC1AE6E72471F86600811388 /* CoreDataDao.swift in Sources */,
 				AC1AE71824723BEB00811388 /* Services.swift in Sources */,
