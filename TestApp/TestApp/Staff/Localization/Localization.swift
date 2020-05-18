@@ -17,6 +17,8 @@ struct Localization {
     
     struct List {
         static let add = "add"
+        static let edit = "edit"
+        static let delete = "delete"
     }
     
     struct Common {

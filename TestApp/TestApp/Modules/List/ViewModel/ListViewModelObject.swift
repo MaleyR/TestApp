@@ -30,6 +30,10 @@ class ListViewModelObject: ListViewModel {
     func shouldAddItem() {
         shouldManageItem?(nil)
     }
+    
+    func shouldRemoveItem(at index: Int) {
+        // Delete item from database
+    }
 }
 
 // Selection can be switched only from ListViewModelObject

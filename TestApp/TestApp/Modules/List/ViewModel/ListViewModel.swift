@@ -13,4 +13,5 @@ protocol ListViewModel {
     
     func shouldSelectItem(at index: Int)
     func shouldAddItem()
+    func shouldRemoveItem(at index: Int)
 }

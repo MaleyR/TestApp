@@ -12,6 +12,8 @@
 
 // List
 "add" = "Add";
+"edit" = "Edit";
+"delete" = "Delete";
 
 // Common
 "back" = "Back";

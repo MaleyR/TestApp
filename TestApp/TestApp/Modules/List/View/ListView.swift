@@ -66,6 +66,27 @@ extension ListView: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         viewModel?.shouldSelectItem(at: indexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editTitle = Localization.List.edit.localized
+        let editAction = UIContextualAction(style: .normal,
+                                            title: editTitle) { [unowned self] (_, _, success) in
+                                                self.viewModel?.shouldSelectItem(at: indexPath.row)
+                                                success(true)
+        }
+        return UISwipeActionsConfiguration(actions: [editAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteTitle = Localization.List.delete.localized
+        let deleteAction = UIContextualAction(style: .destructive,
+                                              title: deleteTitle) { [unowned self] (_, _, success) in
+                                                self.viewModel?.shouldRemoveItem(at: indexPath.row)
+                                                success(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }
 
 // MARK: - UITableViewDataSource methods implementation
