@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ServiceDaoType {
-    func loadObjects(completion: @escaping (([CD], Error?) -> Void))
+    func loadObjects(completion: @escaping (([CD], TAError?) -> Void))
 }

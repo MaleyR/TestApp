@@ -15,6 +15,7 @@ class AddRecordViewModelObject: AddRecordViewModel {
     
     var name: Dynamic<String>
     var hasChanges: Dynamic<Bool>
+    var error: Dynamic<TAError?>
     
     var shouldFinish: (() -> Void)?
     
@@ -23,11 +24,17 @@ class AddRecordViewModelObject: AddRecordViewModel {
         self.hasChanges = .init(false)
         self.newName = name
         self.daoDecorator = daoDecorator
+        self.error = .init(nil)
     }
     
     func shouldAddItem() {
-        daoDecorator.save(name: newName)
-        shouldFinish?()
+        daoDecorator.save(name: newName, completion: { [unowned self] error in
+            if let error = error {
+                self.error.value = error
+            } else {
+                self.shouldFinish?()
+            }
+        })
     }
     
     func shouldCancel() {

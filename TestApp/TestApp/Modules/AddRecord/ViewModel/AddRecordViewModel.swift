@@ -11,6 +11,7 @@ import Foundation
 protocol AddRecordViewModel {
     var name: Dynamic<String> { get }
     var hasChanges: Dynamic<Bool> { get }
+    var error: Dynamic<TAError?> { get }
     
     func shouldAddItem()
     func shouldCancel()

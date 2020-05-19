@@ -19,7 +19,7 @@ class ServiceDao {
 }
 
 extension ServiceDao: ServiceDaoType {
-    func loadObjects(completion: @escaping (([CD], Error?) -> Void)) {
+    func loadObjects(completion: @escaping (([CD], TAError?) -> Void)) {
         let request = GetCatalogRequest()
         networkDao.performRequest(request: request) { (result) in
             switch result {

@@ -10,6 +10,7 @@ import Foundation
 
 protocol ServiceViewModel {
     var isLoading: Dynamic<Bool> { get }
+    var error: Dynamic<TAError?> { get }
     
     var cellViewModels: Dynamic<[ServiceCellViewModel]> { get }
     

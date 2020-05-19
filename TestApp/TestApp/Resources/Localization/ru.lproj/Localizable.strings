@@ -19,6 +19,7 @@
 "back" = "Назад";
 "ok" = "ОК";
 "cancel" = "Отмена";
+"error" = "Ошибка";
 
 // Save record
 "warning" = "Внимание!";

@@ -25,6 +25,7 @@ struct Localization {
         static let back = "back"
         static let ok = "ok"
         static let cancel = "cancel"
+        static let errorTitle = "error"
     }
     
     struct SaveRecord {

@@ -10,6 +10,7 @@ import Foundation
 
 class ServiceViewModelObject: ServiceViewModel {
     var isLoading: Dynamic<Bool> = .init(false)
+    var error: Dynamic<TAError?> = .init(nil)
     var cellViewModels: Dynamic<[ServiceCellViewModel]>
     
     private let dao: ServiceDaoType
@@ -31,7 +32,11 @@ private extension ServiceViewModelObject {
         isLoading.value = true
         dao.loadObjects { [unowned self] (objects, error) in
             DispatchQueue.main.async {
-                self.cellViewModels.value = self.viewModels(from: objects)
+                if let error = error {
+                    self.error.value = error
+                } else {
+                    self.cellViewModels.value = self.viewModels(from: objects)
+                }
                 self.isLoading.value = false
             }
         }

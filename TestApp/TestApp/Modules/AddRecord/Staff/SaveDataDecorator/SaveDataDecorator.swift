@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SaveDataDecoratable {
-    func save(name: String)
+    func save(name: String, completion: ((TAError?) -> Void))
 }
 
 class AddItemDecorator: SaveDataDecoratable {
@@ -19,10 +19,8 @@ class AddItemDecorator: SaveDataDecoratable {
         self.decoratee = decoratee
     }
     
-    func save(name: String) {
-        decoratee.save(record: Record(name: name)) { (error) in
-            // Handle error
-        }
+    func save(name: String, completion: ((TAError?) -> Void)) {
+        decoratee.save(record: Record(name: name), completion: completion)
     }
 }
 
@@ -35,10 +33,8 @@ class EditItemDecorator: SaveDataDecoratable {
         self.name = name
     }
     
-    func save(name: String) {
-        decoratee.update(name: self.name, with: Record(name: name)) { (error) in
-            // Handle error
-        }
+    func save(name: String, completion: ((TAError?) -> Void)) {
+        decoratee.update(name: self.name, with: Record(name: name), completion: completion)
     }
 }
 

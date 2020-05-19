@@ -14,6 +14,7 @@ class ListViewModelObject: ListViewModel {
     private var records: [Record] = []
     
     var cellViewModels: Dynamic<[ListCellViewModel]>
+    var error: Dynamic<TAError?>
     
     var shouldAddNewItem: (() -> Void)?
     var shouldEditItem: ((String) -> Void)?
@@ -25,6 +26,7 @@ class ListViewModelObject: ListViewModel {
     init(dao: LoadDataService & DeleteDataService & LocalDataObserving) {
         self.cellViewModels = Dynamic([])
         self.dao = dao
+        self.error = .init(nil)
         self.loadData()
         
         self.dao.addDataObserver(self)
@@ -45,8 +47,8 @@ class ListViewModelObject: ListViewModel {
     
     func shouldRemoveItem(at index: Int) {
         let record = records[index]
-        dao.delete(record: record) { (error) in
-            // Handle error
+        dao.delete(record: record) { [unowned self] (error) in
+            self.error.value = error
         }
     }
 }

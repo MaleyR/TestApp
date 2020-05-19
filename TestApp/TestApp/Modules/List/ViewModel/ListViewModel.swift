@@ -10,6 +10,7 @@ import Foundation
 
 protocol ListViewModel {
     var cellViewModels: Dynamic<[ListCellViewModel]> { get }
+    var error: Dynamic<TAError?> { get }
     
     func shouldSelectItem(at index: Int)
     func shouldCheckItem(at index: Int)

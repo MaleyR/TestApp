@@ -51,6 +51,12 @@ private extension ListView {
             self.cellViewModels = viewModels
             self.tableView.reloadData()
         })
+        
+        viewModel?.error.bind({ [unowned self] (error) in
+            if let error = error {
+                self.showError(error)
+            }
+        })
     }
 }
 

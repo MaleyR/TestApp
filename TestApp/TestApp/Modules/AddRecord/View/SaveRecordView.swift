@@ -47,6 +47,12 @@ private extension SaveRecordView {
                 self.showConfirmationAlert()
             }
         })
+        
+        viewModel?.error.bind({ [unowned self] (error) in
+            if let error = error {
+                self.showError(error)
+            }
+        })
     }
     
     func showConfirmationAlert() {

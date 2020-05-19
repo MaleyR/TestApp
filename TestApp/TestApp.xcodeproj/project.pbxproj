@@ -57,6 +57,7 @@
 		AC1AE7A8247392D100811388 /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7A7247392D100811388 /* NetworkServiceImpl.swift */; };
 		AC69E6A424739792008DA8B9 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69E6A224739792008DA8B9 /* DatabaseService.swift */; };
 		AC69E6A524739792008DA8B9 /* DatabaseServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69E6A324739792008DA8B9 /* DatabaseServiceImpl.swift */; };
+		ACC020DF2473994F00E2EA96 /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC020DE2473994F00E2EA96 /* UIViewController+Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		AC1AE7A7247392D100811388 /* NetworkServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImpl.swift; sourceTree = "<group>"; };
 		AC69E6A224739792008DA8B9 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		AC69E6A324739792008DA8B9 /* DatabaseServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseServiceImpl.swift; sourceTree = "<group>"; };
+		ACC020DE2473994F00E2EA96 /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,6 +499,7 @@
 		AC1AE7952473907900811388 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ACC020DD2473994100E2EA96 /* UIKit */,
 				AC1AE7962473907900811388 /* Foundation */,
 			);
 			path = Extensions;
@@ -541,6 +544,14 @@
 				AC1AE7A12473912100811388 /* ServicesFactory.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		ACC020DD2473994100E2EA96 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				ACC020DE2473994F00E2EA96 /* UIViewController+Error.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +647,7 @@
 				AC1AE715247226E600811388 /* AddRecordViewModelObject.swift in Sources */,
 				AC1AE78D24738C7900811388 /* W3XMLParser.swift in Sources */,
 				AC1AE79A2473909C00811388 /* Coordinator.swift in Sources */,
+				ACC020DF2473994F00E2EA96 /* UIViewController+Error.swift in Sources */,
 				AC1AE78E24738C7900811388 /* Parser.swift in Sources */,
 				AC1AE75A2472771800811388 /* ServiceCellViewModel.swift in Sources */,
 				AC1AE6892471C00100811388 /* AppDelegate.swift in Sources */,
