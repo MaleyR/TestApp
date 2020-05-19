@@ -65,8 +65,7 @@ extension CoreDataDao: AddDaoType {
 extension CoreDataDao: UpdateDaoType {
     func update(name: String, with record: Record, completion: (Error?) -> Void) {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.recordObjectName)
-        fetchRequest.predicate = NSPredicate(format: "name = %@", name)
+        let fetchRequest = self.fetchRequest(with: NSPredicate(format: "name = %@", record.name))
         
         do {
             let result = try context.fetch(fetchRequest)
@@ -84,8 +83,7 @@ extension CoreDataDao: UpdateDaoType {
 extension CoreDataDao: DeleteDaoType {
     func delete(record: Record, completion: (Error?) -> Void) {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.recordObjectName)
-        fetchRequest.predicate = NSPredicate(format: "name = %@", record.name)
+        let fetchRequest = self.fetchRequest(with: NSPredicate(format: "name = %@", record.name))
         
         do {
             let result = try context.fetch(fetchRequest)
@@ -103,7 +101,7 @@ extension CoreDataDao: DeleteDaoType {
 extension CoreDataDao: LoadDaoType {
     func loadItems(completion: (([Record], Error?) -> Void)) {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.recordObjectName)
+        let fetchRequest = self.fetchRequest()
         
         do {
             let result = try context.fetch(fetchRequest)
@@ -119,6 +117,14 @@ extension CoreDataDao: LoadDaoType {
         } catch {
             completion([], error)
         }
+    }
+}
+
+private extension CoreDataDao {
+    func fetchRequest(with predicate: NSPredicate? = nil) -> NSFetchRequest<NSFetchRequestResult> {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.recordObjectName)
+        fetchRequest.predicate = predicate
+        return fetchRequest
     }
 }
 
