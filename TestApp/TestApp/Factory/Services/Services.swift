@@ -13,5 +13,4 @@ typealias DatabaseDaoType = AddDaoType & UpdateDaoType & DeleteDaoType & LoadDao
 protocol Services {
     var databaseDao: DatabaseDaoType { get }
     var networkDao: NetworkInterface { get }
-    var xmlParser: Parser { get }
 }

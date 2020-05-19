@@ -16,8 +16,4 @@ class ServicesFactory: Services {
     lazy var networkDao: NetworkInterface = {
         return NetworkDao()
     }()
-    
-    lazy var xmlParser: Parser = {
-        return W3XMLParser()
-    }()
 }
