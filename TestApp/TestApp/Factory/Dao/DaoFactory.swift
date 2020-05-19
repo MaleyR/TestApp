@@ -20,6 +20,6 @@ class DaoFactory: Dao {
     }()
     
     lazy var serviceDao: ServiceDao = {
-        return ServiceDao(networkDao: services.networkService, parser: W3XMLParser())
+        return ServiceDaoImpl(networkDao: services.networkService, parser: W3XMLParser())
     }()
 }

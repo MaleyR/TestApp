@@ -13,9 +13,9 @@ class ServiceViewModelObject: ServiceViewModel {
     var error: Dynamic<TAError?> = .init(nil)
     var cellViewModels: Dynamic<[ServiceCellViewModel]>
     
-    private let dao: ServiceDaoType
+    private let dao: ServiceDao
     
-    init(dao: ServiceDaoType) {
+    init(dao: ServiceDao) {
         self.cellViewModels = .init([])
         
         self.dao = dao

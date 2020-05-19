@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Service tab coordinator
 class ServiceCoordinator: TabCoordinator {
     private struct Constants {
         struct Storyboard {

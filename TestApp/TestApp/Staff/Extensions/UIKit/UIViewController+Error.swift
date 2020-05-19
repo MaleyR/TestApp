@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Extension for showing error alert for any UIViewController subclass
 extension UIViewController {
     func showError(_ error: TAError) {
         let alert = UIAlertController(title: Localization.Common.errorTitle.localized,

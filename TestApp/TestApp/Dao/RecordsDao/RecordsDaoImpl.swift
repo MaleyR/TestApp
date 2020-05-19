@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Provides the wrapper for working with outer data source for Record items
 class RecordsDaoImpl: RecordsDao {
     private let databaseService: DatabaseService
     

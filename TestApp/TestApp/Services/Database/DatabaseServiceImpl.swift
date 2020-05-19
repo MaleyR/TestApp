@@ -8,6 +8,9 @@
 
 import CoreData
 
+// Provides the way for working with Core Data data source
+// NOTE: Currently works only with RecordEntity entity
+// NOTE: Can be changed to provide an access to any entity type (using generics, for example)
 class DatabaseServiceImpl {
     private struct Constants {
         static let coreDataName = "TestApp"

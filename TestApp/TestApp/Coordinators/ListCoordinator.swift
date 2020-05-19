@@ -8,6 +8,8 @@
 
 import UIKit
 
+// List tab coordinator
+// NOTE: Maybe it will be needed to add router later to move transition logic there
 class ListCoordinator: TabCoordinator {
     private struct Constants {
         struct Storyboard {
@@ -22,7 +24,6 @@ class ListCoordinator: TabCoordinator {
         }
     }
     
-//    private let dao: DatabaseService
     private let services: Services
     private let dao: Dao
     

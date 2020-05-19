@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Service class for the implementation if binding between view model properties and view
 class Dynamic<T> {
     typealias Listener = (T) -> Void
     

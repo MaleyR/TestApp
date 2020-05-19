@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Provides the way to work with network data source
 class NetworkServiceImpl: NetworkService {
     private let urlSession = URLSession(configuration: .default)
     

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Class for building classes for working with outer services
 class ServicesFactory: Services {
     lazy var databaseDao: DatabaseService = {
         return DatabaseServiceImpl()

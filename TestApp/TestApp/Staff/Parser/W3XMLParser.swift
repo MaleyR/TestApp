@@ -19,6 +19,9 @@ fileprivate enum W3XMLKey: String {
     case catalog = "CATALOG"
 }
 
+// Implements parsing of W3 example XML to the Record objects
+// NOTE: will not work with another models and XMLs
+// NOTE: should be rewritten for flexibility
 class W3XMLParser: NSObject, Parser {
     private var xmlParser: XMLParser!
     

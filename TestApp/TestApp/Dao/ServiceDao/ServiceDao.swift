@@ -8,34 +8,6 @@
 
 import Foundation
 
-class ServiceDao {
-    private let networkDao: NetworkService
-    private let parser: Parser
-    
-    init(networkDao: NetworkService, parser: Parser) {
-        self.networkDao = networkDao
-        self.parser = parser
-    }
-}
-
-extension ServiceDao: ServiceDaoType {
-    func loadObjects(completion: @escaping (([CD], TAError?) -> Void)) {
-        let request = GetCatalogRequest()
-        networkDao.performRequest(request: request) { (result) in
-            switch result {
-            case .success(let data):
-                self.parse(data: data) { (parsingResult) in
-                    completion(parsingResult, nil)
-                }
-            case .failure(let error):
-                completion([], error)
-            }
-        }
-    }
-}
-
-private extension ServiceDao {
-    func parse(data: Data, with completion: @escaping (([CD]) -> Void)) {
-        self.parser.parse(data: data, with: completion)
-    }
+protocol ServiceDao {
+    func loadObjects(completion: @escaping (([CD], TAError?) -> Void))
 }

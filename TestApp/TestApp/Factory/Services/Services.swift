@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Interface that provides an access to outer data sources (network, database etc)
 protocol Services {
     var databaseDao: DatabaseService { get }
     var networkService: NetworkService { get }
