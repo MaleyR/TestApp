@@ -23,3 +23,9 @@
 // Save record
 "warning" = "Внимание!";
 "save_confirmation" = "Хотите ли Вы сохранить изменения?";
+
+// Error
+"network_request_error" = "Ошибка при выполнении сетевого запроса";
+"network_url_error" = "Ошибка при формировании URL";
+
+"database_saving_context_error" = "Ошибка при сохранении контекста базы данных";

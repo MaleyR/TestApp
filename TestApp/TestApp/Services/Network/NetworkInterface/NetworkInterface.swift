@@ -9,9 +9,9 @@
 import Foundation
 
 protocol LoadDataDao {
-    func loadData(completion: @escaping ((Result<Data, Error>) -> Void))
+    func loadData(completion: @escaping ((Result<Data, TAError>) -> Void))
 }
 
 protocol NetworkInterface {
-    func performRequest(request: NetworkRequest, completion: @escaping ((Result<Data, Error>) -> Void))
+    func performRequest(request: NetworkRequest, completion: @escaping ((Result<Data, TAError>) -> Void))
 }

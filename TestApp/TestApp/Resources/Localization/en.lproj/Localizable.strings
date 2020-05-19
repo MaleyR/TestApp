@@ -23,3 +23,9 @@
 // Save record
 "warning" = "Warning!";
 "save_confirmation" = "Do you want to save changes?";
+
+// Errors
+"network_request_error" = "Network request error";
+"network_url_error" = "URL error";
+
+"database_saving_context_error" = "Database saving context error";

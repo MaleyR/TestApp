@@ -14,10 +14,7 @@
 		AC1AE6B92471C78100811388 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC1AE6B62471C78100811388 /* Localizable.strings */; };
 		AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6BC2471C7A500811388 /* Localization.swift */; };
 		AC1AE6C32471C86500811388 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6C22471C86500811388 /* String+Localization.swift */; };
-		AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6C72471C9EC00811388 /* AppCoordinator.swift */; };
 		AC1AE6CC2471CA3300811388 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6CB2471CA3300811388 /* Coordinator.swift */; };
-		AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6D52471D2B500811388 /* ListCoordinator.swift */; };
-		AC1AE6D82471D2C100811388 /* ServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6D72471D2C100811388 /* ServiceCoordinator.swift */; };
 		AC1AE6E02471F81D00811388 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6DF2471F81D00811388 /* Record.swift */; };
 		AC1AE6E42471F84000811388 /* DatabaseInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6E32471F84000811388 /* DatabaseInterface.swift */; };
 		AC1AE6E72471F86600811388 /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE6E62471F86600811388 /* CoreDataDao.swift */; };
@@ -38,13 +35,11 @@
 		AC1AE71A24723C0700811388 /* ServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE71924723C0700811388 /* ServicesFactory.swift */; };
 		AC1AE7272472413F00811388 /* SaveDataDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7262472413F00811388 /* SaveDataDecorator.swift */; };
 		AC1AE729247247E800811388 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC1AE728247247E800811388 /* ListTableViewCell.xib */; };
-		AC1AE72D2472547A00811388 /* W3XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE72C2472547A00811388 /* W3XMLParser.swift */; };
 		AC1AE7312472562500811388 /* CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7302472562500811388 /* CD.swift */; };
 		AC1AE73A2472693000811388 /* NetworkDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7392472693000811388 /* NetworkDao.swift */; };
 		AC1AE73D24726D8B00811388 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE73C24726D8B00811388 /* NetworkInterface.swift */; };
 		AC1AE74024726F6200811388 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE73F24726F6200811388 /* NetworkRequest.swift */; };
 		AC1AE74224726FBB00811388 /* GetCatalogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE74124726FBB00811388 /* GetCatalogRequest.swift */; };
-		AC1AE7442472716E00811388 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7432472716E00811388 /* Parser.swift */; };
 		AC1AE7492472744000811388 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7482472744000811388 /* ServiceView.swift */; };
 		AC1AE74B2472744A00811388 /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE74A2472744A00811388 /* ServiceViewModel.swift */; };
 		AC1AE74D2472745600811388 /* ServiceViewModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE74C2472745600811388 /* ServiceViewModelObject.swift */; };
@@ -56,6 +51,12 @@
 		AC1AE7602472866500811388 /* ServiceDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE75F2472866500811388 /* ServiceDao.swift */; };
 		AC1AE7622472867F00811388 /* ServiceDaoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7612472867F00811388 /* ServiceDaoType.swift */; };
 		AC1AE7812472C54000811388 /* LoadableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7802472C54000811388 /* LoadableViewController.swift */; };
+		AC1AE7862473898500811388 /* ServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7832473898500811388 /* ServiceCoordinator.swift */; };
+		AC1AE7872473898500811388 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7842473898500811388 /* ListCoordinator.swift */; };
+		AC1AE7882473898500811388 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE7852473898500811388 /* AppCoordinator.swift */; };
+		AC1AE78D24738C7900811388 /* W3XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE78B24738C7900811388 /* W3XMLParser.swift */; };
+		AC1AE78E24738C7900811388 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE78C24738C7900811388 /* Parser.swift */; };
+		AC1AE79124738CC000811388 /* TAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AE79024738CC000811388 /* TAError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,10 +69,7 @@
 		AC1AE6B72471C78100811388 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		AC1AE6BC2471C7A500811388 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		AC1AE6C22471C86500811388 /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
-		AC1AE6C72471C9EC00811388 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		AC1AE6CB2471CA3300811388 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		AC1AE6D52471D2B500811388 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
-		AC1AE6D72471D2C100811388 /* ServiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCoordinator.swift; sourceTree = "<group>"; };
 		AC1AE6DF2471F81D00811388 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		AC1AE6E32471F84000811388 /* DatabaseInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseInterface.swift; sourceTree = "<group>"; };
 		AC1AE6E62471F86600811388 /* CoreDataDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDao.swift; sourceTree = "<group>"; };
@@ -92,13 +90,11 @@
 		AC1AE71924723C0700811388 /* ServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesFactory.swift; sourceTree = "<group>"; };
 		AC1AE7262472413F00811388 /* SaveDataDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataDecorator.swift; sourceTree = "<group>"; };
 		AC1AE728247247E800811388 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
-		AC1AE72C2472547A00811388 /* W3XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W3XMLParser.swift; sourceTree = "<group>"; };
 		AC1AE7302472562500811388 /* CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CD.swift; sourceTree = "<group>"; };
 		AC1AE7392472693000811388 /* NetworkDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDao.swift; sourceTree = "<group>"; };
 		AC1AE73C24726D8B00811388 /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		AC1AE73F24726F6200811388 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		AC1AE74124726FBB00811388 /* GetCatalogRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCatalogRequest.swift; sourceTree = "<group>"; };
-		AC1AE7432472716E00811388 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		AC1AE7482472744000811388 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		AC1AE74A2472744A00811388 /* ServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
 		AC1AE74C2472745600811388 /* ServiceViewModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModelObject.swift; sourceTree = "<group>"; };
@@ -110,6 +106,12 @@
 		AC1AE75F2472866500811388 /* ServiceDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDao.swift; sourceTree = "<group>"; };
 		AC1AE7612472867F00811388 /* ServiceDaoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDaoType.swift; sourceTree = "<group>"; };
 		AC1AE7802472C54000811388 /* LoadableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableViewController.swift; sourceTree = "<group>"; };
+		AC1AE7832473898500811388 /* ServiceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCoordinator.swift; sourceTree = "<group>"; };
+		AC1AE7842473898500811388 /* ListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		AC1AE7852473898500811388 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AC1AE78B24738C7900811388 /* W3XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3XMLParser.swift; sourceTree = "<group>"; };
+		AC1AE78C24738C7900811388 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		AC1AE79024738CC000811388 /* TAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,14 +144,16 @@
 		AC1AE6872471C00100811388 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE6DA2471F59E00811388 /* Services */,
+				AC1AE6BA2471C79D00811388 /* Staff */,
+				AC1AE6C42471C9D100811388 /* Modules */,
+				AC1AE6DE2471F80F00811388 /* Models */,
+				AC1AE789247389F000811388 /* Fabrics */,
+				AC1AE7822473895A00811388 /* Coordinators */,
 				AC1AE75D2472865600811388 /* Dao */,
 				AC1AE6F224720F3A00811388 /* Core */,
-				AC1AE6DE2471F80F00811388 /* Models */,
-				AC1AE6C42471C9D100811388 /* Modules */,
 				AC1AE6BE2471C84E00811388 /* Extensions */,
-				AC1AE6BA2471C79D00811388 /* Staff */,
 				AC1AE6AE2471C74A00811388 /* Resources */,
-				AC1AE6DA2471F59E00811388 /* Services */,
 				AC1AE6882471C00100811388 /* AppDelegate.swift */,
 				AC1AE6912471C00700811388 /* Assets.xcassets */,
 				AC1AE6932471C00700811388 /* LaunchScreen.storyboard */,
@@ -195,6 +199,7 @@
 		AC1AE6BA2471C79D00811388 /* Staff */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE78A24738C7900811388 /* Parser */,
 				AC1AE71624723BE300811388 /* Services */,
 				AC1AE6BB2471C79D00811388 /* Localization */,
 			);
@@ -229,28 +234,11 @@
 			isa = PBXGroup;
 			children = (
 				AC1AE6C92471CA1900811388 /* Common */,
-				AC1AE6C52471C9D100811388 /* App */,
 				AC1AE6CD2471D2A400811388 /* List */,
 				AC1AE70B247225B600811388 /* AddRecord */,
 				AC1AE6D12471D2A400811388 /* Service */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		AC1AE6C52471C9D100811388 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				AC1AE6C62471C9E400811388 /* Coordinator */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		AC1AE6C62471C9E400811388 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				AC1AE6C72471C9EC00811388 /* AppCoordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		AC1AE6C92471CA1900811388 /* Common */ = {
@@ -273,7 +261,6 @@
 		AC1AE6CD2471D2A400811388 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				AC1AE6CF2471D2A400811388 /* Coordinator */,
 				AC1AE6CE2471D2A400811388 /* ViewModel */,
 				AC1AE6D02471D2A400811388 /* View */,
 				AC1AE6F0247207E500811388 /* List.storyboard */,
@@ -290,14 +277,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		AC1AE6CF2471D2A400811388 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				AC1AE6D52471D2B500811388 /* ListCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		AC1AE6D02471D2A400811388 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,7 +290,6 @@
 		AC1AE6D12471D2A400811388 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AC1AE6D32471D2A400811388 /* Coordinator */,
 				AC1AE6D22471D2A400811388 /* ViewModel */,
 				AC1AE6D42471D2A400811388 /* View */,
 				AC1AE74E247274C000811388 /* Service.storyboard */,
@@ -328,14 +306,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		AC1AE6D32471D2A400811388 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				AC1AE6D72471D2C100811388 /* ServiceCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		AC1AE6D42471D2A400811388 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				AC1AE72A2472546000811388 /* Network */,
-				AC1AE72B2472546000811388 /* Parser */,
 				AC1AE6E12471F84000811388 /* Database */,
 			);
 			path = Services;
@@ -360,6 +329,7 @@
 			children = (
 				AC1AE6DF2471F81D00811388 /* Record.swift */,
 				AC1AE7302472562500811388 /* CD.swift */,
+				AC1AE79024738CC000811388 /* TAError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -494,15 +464,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		AC1AE72B2472546000811388 /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				AC1AE72C2472547A00811388 /* W3XMLParser.swift */,
-				AC1AE7432472716E00811388 /* Parser.swift */,
-			);
-			path = Parser;
-			sourceTree = "<group>";
-		};
 		AC1AE73B24726D7F00811388 /* NetworkInterface */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +549,32 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		AC1AE7822473895A00811388 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE7852473898500811388 /* AppCoordinator.swift */,
+				AC1AE7842473898500811388 /* ListCoordinator.swift */,
+				AC1AE7832473898500811388 /* ServiceCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		AC1AE789247389F000811388 /* Fabrics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fabrics;
+			sourceTree = "<group>";
+		};
+		AC1AE78A24738C7900811388 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				AC1AE78B24738C7900811388 /* W3XMLParser.swift */,
+				AC1AE78C24738C7900811388 /* Parser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -667,24 +654,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC1AE6F62472102000811388 /* ListViewModelObject.swift in Sources */,
-				AC1AE6D62471D2B500811388 /* ListCoordinator.swift in Sources */,
 				AC1AE7812472C54000811388 /* LoadableViewController.swift in Sources */,
 				AC1AE74024726F6200811388 /* NetworkRequest.swift in Sources */,
 				AC1AE6E72471F86600811388 /* CoreDataDao.swift in Sources */,
+				AC1AE7882473898500811388 /* AppCoordinator.swift in Sources */,
+				AC1AE79124738CC000811388 /* TAError.swift in Sources */,
 				AC1AE71824723BEB00811388 /* Services.swift in Sources */,
 				AC1AE713247226DA00811388 /* AddRecordViewModel.swift in Sources */,
 				AC1AE6E02471F81D00811388 /* Record.swift in Sources */,
 				AC1AE73D24726D8B00811388 /* NetworkInterface.swift in Sources */,
 				AC1AE71A24723C0700811388 /* ServicesFactory.swift in Sources */,
+				AC1AE7862473898500811388 /* ServiceCoordinator.swift in Sources */,
 				AC1AE74224726FBB00811388 /* GetCatalogRequest.swift in Sources */,
-				AC1AE72D2472547A00811388 /* W3XMLParser.swift in Sources */,
 				AC1AE6F424720F4900811388 /* Dynamic.swift in Sources */,
 				AC1AE73A2472693000811388 /* NetworkDao.swift in Sources */,
 				AC1AE75C2472772600811388 /* ServiceCellViewModelObject.swift in Sources */,
 				AC1AE70824721DC300811388 /* ListTableViewCell.swift in Sources */,
-				AC1AE6C82471C9EC00811388 /* AppCoordinator.swift in Sources */,
 				AC1AE715247226E600811388 /* AddRecordViewModelObject.swift in Sources */,
 				AC1AE6E42471F84000811388 /* DatabaseInterface.swift in Sources */,
+				AC1AE78D24738C7900811388 /* W3XMLParser.swift in Sources */,
+				AC1AE78E24738C7900811388 /* Parser.swift in Sources */,
 				AC1AE75A2472771800811388 /* ServiceCellViewModel.swift in Sources */,
 				AC1AE6892471C00100811388 /* AppDelegate.swift in Sources */,
 				AC1AE6BD2471C7A500811388 /* Localization.swift in Sources */,
@@ -702,9 +691,8 @@
 				AC1AE7492472744000811388 /* ServiceView.swift in Sources */,
 				AC1AE6CC2471CA3300811388 /* Coordinator.swift in Sources */,
 				AC1AE6EB2471FAA100811388 /* TestApp.xcdatamodeld in Sources */,
-				AC1AE7442472716E00811388 /* Parser.swift in Sources */,
+				AC1AE7872473898500811388 /* ListCoordinator.swift in Sources */,
 				AC1AE74B2472744A00811388 /* ServiceViewModel.swift in Sources */,
-				AC1AE6D82471D2C100811388 /* ServiceCoordinator.swift in Sources */,
 				AC1AE7602472866500811388 /* ServiceDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

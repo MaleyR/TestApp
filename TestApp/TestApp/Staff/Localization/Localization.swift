@@ -31,4 +31,11 @@ struct Localization {
         static let confirmationAlertTitle = "warning"
         static let confirmationAlertText = "save_confirmation"
     }
+    
+    struct Errors {
+        static let networkRequestError = "network_request_error"
+        static let networkUrlError = "network_url_error"
+        
+        static let databaseSavingContextError = "database_saving_context_error"
+    }
 }

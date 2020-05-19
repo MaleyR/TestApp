@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias DatabaseOperationCompletion = ((Error?) -> Void)
+typealias DatabaseOperationCompletion = ((TAError?) -> Void)
 
 protocol AddDaoType {
     func save(record: Record, completion: DatabaseOperationCompletion)
@@ -23,7 +23,7 @@ protocol DeleteDaoType {
 }
 
 protocol LoadDaoType {
-    func loadItems(completion: (([Record], Error?) -> Void))
+    func loadItems(completion: (([Record], TAError?) -> Void))
 }
 
 // MARK: - Data changing observing

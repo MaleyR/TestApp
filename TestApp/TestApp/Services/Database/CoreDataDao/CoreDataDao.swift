@@ -31,14 +31,15 @@ class CoreDataDao {
         subsribeToDataChanges()
     }
     
-    private func saveContext() {
+    private func saveContext(completion: ((TAError?) -> Void)) {
         let context = persistentContainer.viewContext
         
         if context.hasChanges {
             do {
                 try context.save()
+                completion(nil)
             } catch {
-                fatalError(error.localizedDescription)
+                completion(TAError.text(Localization.Errors.databaseSavingContextError.localized))
             }
         }
     }
@@ -51,19 +52,19 @@ class CoreDataDao {
 
 // MARK: - AddDaoType methods implementation
 extension CoreDataDao: AddDaoType {
-    func save(record: Record, completion: (Error?) -> Void) {
+    func save(record: Record, completion: (TAError?) -> Void) {
         let context = persistentContainer.viewContext
         
         guard let entity = NSEntityDescription.entity(forEntityName: Constants.recordObjectName, in: context) else { return }
         let object = RecordEntity(entity: entity, insertInto: context)
         fill(managedObject: object, with: record)
-        saveContext()
+        saveContext(completion: completion)
     }
 }
 
 // MARK: - UpdateDaoType methods implementation
 extension CoreDataDao: UpdateDaoType {
-    func update(name: String, with record: Record, completion: (Error?) -> Void) {
+    func update(name: String, with record: Record, completion: (TAError?) -> Void) {
         let context = persistentContainer.viewContext
         let fetchRequest = self.fetchRequest(with: NSPredicate(format: "name = %@", record.name))
         
@@ -72,16 +73,16 @@ extension CoreDataDao: UpdateDaoType {
             
             guard let object = result.first as? RecordEntity else { return }
             fill(managedObject: object, with: record)
-            saveContext()
+            saveContext(completion: completion)
         } catch {
-            completion(error)
+            completion(.error(error))
         }
     }
 }
 
 // MARK: - DeleteDaoType methods implementation
 extension CoreDataDao: DeleteDaoType {
-    func delete(record: Record, completion: (Error?) -> Void) {
+    func delete(record: Record, completion: (TAError?) -> Void) {
         let context = persistentContainer.viewContext
         let fetchRequest = self.fetchRequest(with: NSPredicate(format: "name = %@", record.name))
         
@@ -90,16 +91,16 @@ extension CoreDataDao: DeleteDaoType {
             
             guard let object = result.first as? RecordEntity else { return }
             context.delete(object)
-            saveContext()
+            saveContext(completion: completion)
         } catch {
-            completion(error)
+            completion(.error(error))
         }
     }
 }
 
 // MARK: - LoadDaoType methods implementation
 extension CoreDataDao: LoadDaoType {
-    func loadItems(completion: (([Record], Error?) -> Void)) {
+    func loadItems(completion: (([Record], TAError?) -> Void)) {
         let context = persistentContainer.viewContext
         let fetchRequest = self.fetchRequest()
         
@@ -115,7 +116,7 @@ extension CoreDataDao: LoadDaoType {
             
             completion(records, nil)
         } catch {
-            completion([], error)
+            completion([], .error(error))
         }
     }
 }
