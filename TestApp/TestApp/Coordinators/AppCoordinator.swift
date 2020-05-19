@@ -44,7 +44,7 @@ private extension AppCoordinator {
     }
     
     func serviceCoordinator() -> ServiceCoordinator {
-        let coordinator = ServiceCoordinator(dao: dao.serviceDao)
+        let coordinator = ServiceCoordinator(dao: dao)
         return coordinator
     }
 }
