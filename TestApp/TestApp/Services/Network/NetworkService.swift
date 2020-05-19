@@ -1,17 +1,13 @@
 //
-//  NetworkInterface.swift
+//  NetworkService.swift
 //  TestApp
 //
-//  Created by Ruslan Maley on 18.05.2020.
+//  Created by Ruslan Maley on 19.05.2020.
 //  Copyright © 2020 Ruslan Maley. All rights reserved.
 //
 
 import Foundation
 
-protocol LoadDataDao {
-    func loadData(completion: @escaping ((Result<Data, TAError>) -> Void))
-}
-
-protocol NetworkInterface {
+protocol NetworkService {
     func performRequest(request: NetworkRequest, completion: @escaping ((Result<Data, TAError>) -> Void))
 }

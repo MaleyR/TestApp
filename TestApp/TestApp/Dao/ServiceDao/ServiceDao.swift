@@ -9,10 +9,10 @@
 import Foundation
 
 class ServiceDao {
-    private let networkDao: NetworkInterface
+    private let networkDao: NetworkService
     private let parser: Parser
     
-    init(networkDao: NetworkInterface, parser: Parser) {
+    init(networkDao: NetworkService, parser: Parser) {
         self.networkDao = networkDao
         self.parser = parser
     }

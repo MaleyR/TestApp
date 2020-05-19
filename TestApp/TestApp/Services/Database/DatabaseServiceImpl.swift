@@ -1,5 +1,5 @@
 //
-//  CoreDataDao.swift
+//  DatabaseServiceImpl.swift
 //  TestApp
 //
 //  Created by Ruslan Maley on 18.05.2020.
@@ -8,13 +8,13 @@
 
 import CoreData
 
-class CoreDataDao {
+class DatabaseServiceImpl {
     private struct Constants {
         static let coreDataName = "TestApp"
         static let recordObjectName = "RecordEntity"
     }
     
-    private var observers: [DaoDataObserver] = []
+    private var observers: [LocalDataObserver] = []
     
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: Constants.coreDataName)
@@ -51,7 +51,7 @@ class CoreDataDao {
 }
 
 // MARK: - AddDaoType methods implementation
-extension CoreDataDao: AddDaoType {
+extension DatabaseServiceImpl: AddDataService {
     func save(record: Record, completion: (TAError?) -> Void) {
         let context = persistentContainer.viewContext
         
@@ -63,7 +63,7 @@ extension CoreDataDao: AddDaoType {
 }
 
 // MARK: - UpdateDaoType methods implementation
-extension CoreDataDao: UpdateDaoType {
+extension DatabaseServiceImpl: UpdateDataService {
     func update(name: String, with record: Record, completion: (TAError?) -> Void) {
         let context = persistentContainer.viewContext
         let fetchRequest = self.fetchRequest(with: NSPredicate(format: "name = %@", record.name))
@@ -81,7 +81,7 @@ extension CoreDataDao: UpdateDaoType {
 }
 
 // MARK: - DeleteDaoType methods implementation
-extension CoreDataDao: DeleteDaoType {
+extension DatabaseServiceImpl: DeleteDataService {
     func delete(record: Record, completion: (TAError?) -> Void) {
         let context = persistentContainer.viewContext
         let fetchRequest = self.fetchRequest(with: NSPredicate(format: "name = %@", record.name))
@@ -99,7 +99,7 @@ extension CoreDataDao: DeleteDaoType {
 }
 
 // MARK: - LoadDaoType methods implementation
-extension CoreDataDao: LoadDaoType {
+extension DatabaseServiceImpl: LoadDataService {
     func loadItems(completion: (([Record], TAError?) -> Void)) {
         let context = persistentContainer.viewContext
         let fetchRequest = self.fetchRequest()
@@ -121,7 +121,7 @@ extension CoreDataDao: LoadDaoType {
     }
 }
 
-private extension CoreDataDao {
+private extension DatabaseServiceImpl {
     func fetchRequest(with predicate: NSPredicate? = nil) -> NSFetchRequest<NSFetchRequestResult> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.recordObjectName)
         fetchRequest.predicate = predicate
@@ -130,7 +130,7 @@ private extension CoreDataDao {
 }
 
 // MARK: - Private extension for filling Core Data RecordEntity with Record model
-private extension CoreDataDao {
+private extension DatabaseServiceImpl {
     @discardableResult
     func fill(managedObject: RecordEntity, with object: Record) -> RecordEntity {
         managedObject.name = object.name
@@ -146,21 +146,21 @@ fileprivate extension Record {
 }
 
 // MARK: - Data Observing methods implementation
-extension CoreDataDao: DaoDataObserving {
-    func addDataObserver(_ observer: DaoDataObserver) {
+extension DatabaseServiceImpl: LocalDataObserving {
+    func addDataObserver(_ observer: LocalDataObserver) {
         if !observers.contains(where: { observer === $0 }) {
             observers.append(observer)
         }
     }
     
-    func removeDataObserver(_ observer: DaoDataObserver) {
+    func removeDataObserver(_ observer: LocalDataObserver) {
         guard let index = observers.firstIndex(where: { $0 === observer }) else { return }
         observers.remove(at: index)
     }
 }
 
 // MARK: - Data changing notifications handling
-private extension CoreDataDao {
+private extension DatabaseServiceImpl {
     func subsribeToDataChanges() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(dataChanged),

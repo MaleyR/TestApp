@@ -8,9 +8,13 @@
 
 import Foundation
 
-typealias DatabaseDaoType = AddDaoType & UpdateDaoType & DeleteDaoType & LoadDaoType & DaoDataObserving
+typealias DatabaseService = AddDataService &
+                            UpdateDataService &
+                            DeleteDataService &
+                            LoadDataService &
+                            LocalDataObserving
 
 protocol Services {
-    var databaseDao: DatabaseDaoType { get }
-    var networkDao: NetworkInterface { get }
+    var databaseDao: DatabaseService { get }
+    var networkService: NetworkService { get }
 }

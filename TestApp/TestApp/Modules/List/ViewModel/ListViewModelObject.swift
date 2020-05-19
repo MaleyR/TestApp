@@ -9,7 +9,7 @@
 import Foundation
 
 class ListViewModelObject: ListViewModel {
-    private let dao: LoadDaoType & DeleteDaoType & DaoDataObserving
+    private let dao: LoadDataService & DeleteDataService & LocalDataObserving
     
     private var records: [Record] = []
     
@@ -22,7 +22,7 @@ class ListViewModelObject: ListViewModel {
         self.dao.removeDataObserver(self)
     }
     
-    init(dao: LoadDaoType & DeleteDaoType & DaoDataObserving) {
+    init(dao: LoadDataService & DeleteDataService & LocalDataObserving) {
         self.cellViewModels = Dynamic([])
         self.dao = dao
         self.loadData()
@@ -66,7 +66,7 @@ private extension ListViewModelObject {
 }
 
 // MARK: - Implementation of data observer methods
-extension ListViewModelObject: DaoDataObserver {
+extension ListViewModelObject: LocalDataObserver {
     func dataChanged() {
         loadData()
     }

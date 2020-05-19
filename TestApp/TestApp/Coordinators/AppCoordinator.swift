@@ -42,7 +42,7 @@ private extension AppCoordinator {
     }
     
     func serviceCoordinator() -> ServiceCoordinator {
-        let dao = ServiceDao(networkDao: services.networkDao, parser: W3XMLParser())
+        let dao = ServiceDao(networkDao: services.networkService, parser: W3XMLParser())
         let coordinator = ServiceCoordinator(dao: dao)
         return coordinator
     }

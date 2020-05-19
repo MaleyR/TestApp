@@ -1,5 +1,5 @@
 //
-//  DatabaseInterface.swift
+//  DatabaseService.swift
 //  TestApp
 //
 //  Created by Ruslan Maley on 18.05.2020.
@@ -10,28 +10,28 @@ import Foundation
 
 typealias DatabaseOperationCompletion = ((TAError?) -> Void)
 
-protocol AddDaoType {
+protocol AddDataService {
     func save(record: Record, completion: DatabaseOperationCompletion)
 }
 
-protocol UpdateDaoType {
+protocol UpdateDataService {
     func update(name: String, with record: Record, completion: DatabaseOperationCompletion)
 }
 
-protocol DeleteDaoType {
+protocol DeleteDataService {
     func delete(record: Record, completion: DatabaseOperationCompletion)
 }
 
-protocol LoadDaoType {
+protocol LoadDataService {
     func loadItems(completion: (([Record], TAError?) -> Void))
 }
 
 // MARK: - Data changing observing
-protocol DaoDataObserver: class {
+protocol LocalDataObserver: class {
     func dataChanged()
 }
 
-protocol DaoDataObserving {
-    func addDataObserver(_ observer: DaoDataObserver)
-    func removeDataObserver(_ observer: DaoDataObserver)
+protocol LocalDataObserving {
+    func addDataObserver(_ observer: LocalDataObserver)
+    func removeDataObserver(_ observer: LocalDataObserver)
 }

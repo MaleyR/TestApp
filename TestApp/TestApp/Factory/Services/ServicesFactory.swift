@@ -9,11 +9,11 @@
 import Foundation
 
 class ServicesFactory: Services {
-    lazy var databaseDao: DatabaseDaoType = {
-        return CoreDataDao()
+    lazy var databaseDao: DatabaseService = {
+        return DatabaseServiceImpl()
     }()
     
-    lazy var networkDao: NetworkInterface = {
-        return NetworkDao()
+    lazy var networkService: NetworkService = {
+        return NetworkServiceImpl()
     }()
 }

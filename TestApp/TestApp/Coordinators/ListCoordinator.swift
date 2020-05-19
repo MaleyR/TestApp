@@ -22,7 +22,7 @@ class ListCoordinator: TabCoordinator {
         }
     }
     
-    private let dao: DatabaseDaoType
+    private let dao: DatabaseService
     
     var rootViewController: UIViewController {
         let controller = navigationController
@@ -62,7 +62,7 @@ class ListCoordinator: TabCoordinator {
     private let addItemStoryboard = UIStoryboard(name: Constants.Storyboard.AddItem.name,
                                                  bundle: Bundle(for: SaveRecordView.self))
     
-    init(dao: DatabaseDaoType) {
+    init(dao: DatabaseService) {
         self.dao = dao
     }
 }

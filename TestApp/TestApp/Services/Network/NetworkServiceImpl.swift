@@ -1,14 +1,14 @@
 //
-//  NetworkService.swift
+//  NetworkServiceImpl.swift
 //  TestApp
 //
-//  Created by Ruslan Maley on 18.05.2020.
+//  Created by Ruslan Maley on 19.05.2020.
 //  Copyright © 2020 Ruslan Maley. All rights reserved.
 //
 
 import Foundation
 
-class NetworkDao: NetworkInterface {
+class NetworkServiceImpl: NetworkService {
     private let urlSession = URLSession(configuration: .default)
     
     func performRequest(request: NetworkRequest, completion: @escaping ((Result<Data, TAError>) -> Void)) {
