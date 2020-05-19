@@ -9,7 +9,7 @@
 import Foundation
 
 class ListViewModelObject: ListViewModel {
-    private let dao: LoadDataService & DeleteDataService & LocalDataObserving
+    private let dao: LoadRecordsDao & DeleteRecordsDao & LocalDataObserving
     
     private var records: [Record] = []
     
@@ -23,7 +23,7 @@ class ListViewModelObject: ListViewModel {
         self.dao.removeDataObserver(self)
     }
     
-    init(dao: LoadDataService & DeleteDataService & LocalDataObserving) {
+    init(dao: LoadRecordsDao & DeleteRecordsDao & LocalDataObserving) {
         self.cellViewModels = Dynamic([])
         self.dao = dao
         self.error = .init(nil)

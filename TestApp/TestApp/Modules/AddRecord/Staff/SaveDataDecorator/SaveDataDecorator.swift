@@ -13,9 +13,9 @@ protocol SaveDataDecoratable {
 }
 
 class AddItemDecorator: SaveDataDecoratable {
-    private let decoratee: AddDataService
+    private let decoratee: AddRecordsDao
     
-    init(decoratee: AddDataService) {
+    init(decoratee: AddRecordsDao) {
         self.decoratee = decoratee
     }
     
@@ -25,10 +25,10 @@ class AddItemDecorator: SaveDataDecoratable {
 }
 
 class EditItemDecorator: SaveDataDecoratable {
-    private let decoratee: UpdateDataService
+    private let decoratee: UpdateRecordsDao
     private let name: String
     
-    init(decoratee: UpdateDataService, name: String) {
+    init(decoratee: UpdateRecordsDao, name: String) {
         self.decoratee = decoratee
         self.name = name
     }

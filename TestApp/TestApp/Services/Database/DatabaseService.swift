@@ -9,21 +9,26 @@
 import Foundation
 
 typealias DatabaseOperationCompletion = ((TAError?) -> Void)
+typealias DatabaseService = AddDataDatabaseService &
+                            UpdateDataDatabaseService &
+                            DeleteDataDatabaseService &
+                            LoadDataDatabaseService &
+                            LocalDataObserving
 
-protocol AddDataService {
-    func save(record: Record, completion: DatabaseOperationCompletion)
+protocol AddDataDatabaseService {
+    func save(object: [String : Any], completion: DatabaseOperationCompletion)
 }
 
-protocol UpdateDataService {
-    func update(name: String, with record: Record, completion: DatabaseOperationCompletion)
+protocol UpdateDataDatabaseService {
+    func update(id: Any, with object: [String : Any], completion: DatabaseOperationCompletion)
 }
 
-protocol DeleteDataService {
-    func delete(record: Record, completion: DatabaseOperationCompletion)
+protocol DeleteDataDatabaseService {
+    func delete(id: Any, completion: DatabaseOperationCompletion)
 }
 
-protocol LoadDataService {
-    func loadItems(completion: (([Record], TAError?) -> Void))
+protocol LoadDataDatabaseService {
+    func load(completion: ([[String : Any]], TAError?) -> Void)
 }
 
 // MARK: - Data changing observing

@@ -22,7 +22,9 @@ class ListCoordinator: TabCoordinator {
         }
     }
     
-    private let dao: DatabaseService
+//    private let dao: DatabaseService
+    private let services: Services
+    private let dao: Dao
     
     var rootViewController: UIViewController {
         let controller = navigationController
@@ -45,7 +47,7 @@ class ListCoordinator: TabCoordinator {
         view.title = Localization.Tabs.list.localized
         
         if let requiredView = view as? ListView {
-            let viewModel = ListViewModelObject(dao: self.dao)
+            let viewModel = ListViewModelObject(dao: self.dao.recordsDao)
             viewModel.shouldAddNewItem = { [unowned self] in
                 self.openAddRecordScreen()
             }
@@ -62,7 +64,8 @@ class ListCoordinator: TabCoordinator {
     private let addItemStoryboard = UIStoryboard(name: Constants.Storyboard.AddItem.name,
                                                  bundle: Bundle(for: SaveRecordView.self))
     
-    init(dao: DatabaseService) {
+    init(services: Services, dao: Dao) {
+        self.services = services
         self.dao = dao
     }
 }
@@ -70,12 +73,12 @@ class ListCoordinator: TabCoordinator {
 // MARK: - Routing methods implementation
 private extension ListCoordinator {
     func openAddRecordScreen() {
-        let decorator = AddItemDecorator(decoratee: dao)
+        let decorator = AddItemDecorator(decoratee: self.dao.recordsDao)
         presentWithNavigation(viewController: saveRecordViewController(decorator: decorator))
     }
     
     func openEditRecordScreen(name: String) {
-        let decorator = EditItemDecorator(decoratee: dao, name: name)
+        let decorator = EditItemDecorator(decoratee: self.dao.recordsDao, name: name)
         presentWithNavigation(viewController: saveRecordViewController(with: name, decorator: decorator))
     }
     

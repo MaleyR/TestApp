@@ -50,6 +50,73 @@ class DatabaseServiceImpl {
     }
 }
 
+extension DatabaseServiceImpl: AddDataDatabaseService {
+    func save(object: [String : Any], completion: (TAError?) -> Void) {
+        let context = persistentContainer.viewContext
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: Constants.recordObjectName, in: context) else { return }
+        let managedObject = RecordEntity(entity: entity, insertInto: context)
+        fill(managedObject: managedObject, with: object)
+        saveContext(completion: completion)
+    }
+}
+
+extension DatabaseServiceImpl: UpdateDataDatabaseService {
+    func update(id: Any, with object: [String : Any], completion: (TAError?) -> Void) {
+        let context = persistentContainer.viewContext
+        let fetchRequest = self.fetchRequest(with: NSPredicate(format: "name = %@", id as! CVarArg))
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            
+            guard let managedObject = result.first as? RecordEntity else { return }
+            fill(managedObject: managedObject, with: object)
+            saveContext(completion: completion)
+        } catch {
+            completion(.error(error))
+        }
+    }
+}
+
+extension DatabaseServiceImpl: DeleteDataDatabaseService {
+    func delete(id: Any, completion: (TAError?) -> Void) {
+        let context = persistentContainer.viewContext
+        let fetchRequest = self.fetchRequest(with: NSPredicate(format: "name = %@", id as! CVarArg))
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            
+            guard let object = result.first as? RecordEntity else { return }
+            context.delete(object)
+            saveContext(completion: completion)
+        } catch {
+            completion(.error(error))
+        }
+    }
+}
+
+extension DatabaseServiceImpl: LoadDataDatabaseService {
+    func load(completion: ([[String : Any]], TAError?) -> Void) {
+        let context = persistentContainer.viewContext
+        let fetchRequest = self.fetchRequest()
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            let recordObjects = result as? [RecordEntity] ?? []
+            
+            var objects: [[String : Any]] = []
+            
+            for recordObject in recordObjects {
+                objects.append(["name" : recordObject.value(forKey: "name") ?? ""])
+            }
+            
+            completion(objects, nil)
+        } catch {
+            completion([], .error(error))
+        }
+    }
+}
+
 // MARK: - AddDaoType methods implementation
 extension DatabaseServiceImpl: AddDataService {
     func save(record: Record, completion: (TAError?) -> Void) {
@@ -134,6 +201,15 @@ private extension DatabaseServiceImpl {
     @discardableResult
     func fill(managedObject: RecordEntity, with object: Record) -> RecordEntity {
         managedObject.name = object.name
+        return managedObject
+    }
+    
+    @discardableResult
+    func fill(managedObject: RecordEntity, with object: [String : Any]) -> RecordEntity {
+        for (key, value) in object {
+            managedObject.setValue(value, forKey: key)
+        }
+        
         return managedObject
     }
 }

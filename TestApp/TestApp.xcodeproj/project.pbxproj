@@ -58,6 +58,10 @@
 		AC69E6A424739792008DA8B9 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69E6A224739792008DA8B9 /* DatabaseService.swift */; };
 		AC69E6A524739792008DA8B9 /* DatabaseServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69E6A324739792008DA8B9 /* DatabaseServiceImpl.swift */; };
 		ACC020DF2473994F00E2EA96 /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC020DE2473994F00E2EA96 /* UIViewController+Error.swift */; };
+		ACC020E22473A0DD00E2EA96 /* RecordsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC020E12473A0DD00E2EA96 /* RecordsDao.swift */; };
+		ACC020E42473A0ED00E2EA96 /* RecordsDaoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC020E32473A0ED00E2EA96 /* RecordsDaoImpl.swift */; };
+		ACC020E72473A31900E2EA96 /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC020E62473A31900E2EA96 /* Dao.swift */; };
+		ACC020E92473A32200E2EA96 /* DaoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC020E82473A32200E2EA96 /* DaoFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +118,10 @@
 		AC69E6A224739792008DA8B9 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		AC69E6A324739792008DA8B9 /* DatabaseServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseServiceImpl.swift; sourceTree = "<group>"; };
 		ACC020DE2473994F00E2EA96 /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
+		ACC020E12473A0DD00E2EA96 /* RecordsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsDao.swift; sourceTree = "<group>"; };
+		ACC020E32473A0ED00E2EA96 /* RecordsDaoImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsDaoImpl.swift; sourceTree = "<group>"; };
+		ACC020E62473A31900E2EA96 /* Dao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
+		ACC020E82473A32200E2EA96 /* DaoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaoFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +154,12 @@
 		AC1AE6872471C00100811388 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC1AE7822473895A00811388 /* Coordinators */,
+				AC1AE6DE2471F80F00811388 /* Models */,
 				AC1AE79F247390F500811388 /* Factory */,
 				AC1AE6DA2471F59E00811388 /* Services */,
 				AC1AE6BA2471C79D00811388 /* Staff */,
 				AC1AE6C42471C9D100811388 /* Modules */,
-				AC1AE6DE2471F80F00811388 /* Models */,
-				AC1AE7822473895A00811388 /* Coordinators */,
 				AC1AE75D2472865600811388 /* Dao */,
 				AC1AE6AE2471C74A00811388 /* Resources */,
 				AC1AE6882471C00100811388 /* AppDelegate.swift */,
@@ -454,6 +462,7 @@
 		AC1AE75D2472865600811388 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
+				ACC020E02473A0CF00E2EA96 /* RecordsDao */,
 				AC1AE75E2472865600811388 /* ServiceDao */,
 			);
 			path = Dao;
@@ -532,6 +541,7 @@
 		AC1AE79F247390F500811388 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				ACC020E52473A31200E2EA96 /* Dao */,
 				AC1AE7A02473910F00811388 /* Services */,
 			);
 			path = Factory;
@@ -552,6 +562,24 @@
 				ACC020DE2473994F00E2EA96 /* UIViewController+Error.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		ACC020E02473A0CF00E2EA96 /* RecordsDao */ = {
+			isa = PBXGroup;
+			children = (
+				ACC020E12473A0DD00E2EA96 /* RecordsDao.swift */,
+				ACC020E32473A0ED00E2EA96 /* RecordsDaoImpl.swift */,
+			);
+			path = RecordsDao;
+			sourceTree = "<group>";
+		};
+		ACC020E52473A31200E2EA96 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				ACC020E62473A31900E2EA96 /* Dao.swift */,
+				ACC020E82473A32200E2EA96 /* DaoFactory.swift */,
+			);
+			path = Dao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -655,9 +683,12 @@
 				AC1AE7272472413F00811388 /* SaveDataDecorator.swift in Sources */,
 				AC1AE79E247390B800811388 /* LoadableViewController.swift in Sources */,
 				AC1AE7A32473912100811388 /* ServicesFactory.swift in Sources */,
+				ACC020E72473A31900E2EA96 /* Dao.swift in Sources */,
 				AC1AE7572472770900811388 /* ServiceTableViewCell.swift in Sources */,
 				AC1AE70A24721F4300811388 /* ListCellViewModelObject.swift in Sources */,
 				AC1AE70424721BC600811388 /* ListCellViewModel.swift in Sources */,
+				ACC020E22473A0DD00E2EA96 /* RecordsDao.swift in Sources */,
+				ACC020E42473A0ED00E2EA96 /* RecordsDaoImpl.swift in Sources */,
 				AC1AE74D2472745600811388 /* ServiceViewModelObject.swift in Sources */,
 				AC1AE7312472562500811388 /* CD.swift in Sources */,
 				AC1AE6ED247207C800811388 /* ListView.swift in Sources */,
@@ -670,6 +701,7 @@
 				AC69E6A424739792008DA8B9 /* DatabaseService.swift in Sources */,
 				AC1AE6EB2471FAA100811388 /* TestApp.xcdatamodeld in Sources */,
 				AC1AE7872473898500811388 /* ListCoordinator.swift in Sources */,
+				ACC020E92473A32200E2EA96 /* DaoFactory.swift in Sources */,
 				AC1AE7A8247392D100811388 /* NetworkServiceImpl.swift in Sources */,
 				AC1AE74B2472744A00811388 /* ServiceViewModel.swift in Sources */,
 				AC1AE7602472866500811388 /* ServiceDao.swift in Sources */,
