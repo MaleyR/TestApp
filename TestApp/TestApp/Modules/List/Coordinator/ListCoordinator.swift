@@ -71,22 +71,23 @@ class ListCoordinator: TabCoordinator {
 private extension ListCoordinator {
     func openAddRecordScreen() {
         let decorator = AddItemDecorator(decoratee: dao)
-        let navigationController = UINavigationController(rootViewController: saveRecordViewController(with: "",
-                                                                                                       decorator: decorator))
-        self.navigationController.present(navigationController, animated: true, completion: nil)
+        presentWithNavigation(viewController: saveRecordViewController(decorator: decorator))
     }
     
     func openEditRecordScreen(name: String) {
         let decorator = EditItemDecorator(decoratee: dao, name: name)
-        let navigationController = UINavigationController(rootViewController: saveRecordViewController(with: name,
-                                                                                                       decorator: decorator))
+        presentWithNavigation(viewController: saveRecordViewController(with: name, decorator: decorator))
+    }
+    
+    func presentWithNavigation(viewController: UIViewController) {
+        let navigationController = UINavigationController(rootViewController: viewController)
         self.navigationController.present(navigationController, animated: true, completion: nil)
     }
 }
 
 // MARK: - Private methods implementation
 private extension ListCoordinator {
-    func saveRecordViewController(with name: String, decorator: SaveDataDecoratable) -> UIViewController {
+    func saveRecordViewController(with name: String = "", decorator: SaveDataDecoratable) -> UIViewController {
         let view = self.addItemStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.AddItem.viewIdentifier)
         
         if let requiredView = view as? SaveRecordView {
